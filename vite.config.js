@@ -10,5 +10,16 @@ export default defineConfig({
     alias: {
       '@': join(__dirname, '/src')
     }
+  },
+  // 代理配置
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://mock.apifox.cn/m1/2058081-0-default/',
+        changeOrigin: true,
+        rewrite: (path) =>
+            path.replace(new RegExp("^/api"), "/"),
+      }
+    }
   }
 })

@@ -1,9 +1,10 @@
 <template>
-    <div>我是移动端的首页</div>
+    <navigation-view/>
 </template>
 
 <script setup>
-import { ref } from "vue" 
+import navigationView from './components/navigation/index.vue'
+
 
 </script>
 
