@@ -31,9 +31,9 @@
       </li>
     </ul>
   </div>
-  <my-popup v-model="isVisable">
+  <m-popup v-model="isVisable">
     <div>内容</div>
-  </my-popup>
+  </m-popup>
 </template>
 
 <script setup>
