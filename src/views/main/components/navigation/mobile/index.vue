@@ -12,6 +12,7 @@
       ></li>
       <!-- 汉堡按钮 -->
       <li
+        @click="onShowPopup"
         class="fixed top-0 right-[-1px] h-4 px-1 flex items-center bg-white z-20 shadow-l-white"
       >
         <m-svg-icon name="hamburger" class="w-1.5 h-1.5"></m-svg-icon>
@@ -30,6 +31,9 @@
       </li>
     </ul>
   </div>
+  <my-popup v-model="isVisable">
+    <div>内容</div>
+  </my-popup>
 </template>
 
 <script setup>
@@ -80,6 +84,12 @@ watch(currentCategoryIndex, (val) => {
 
 const onItemClick = (index) => {
   currentCategoryIndex.value = index
+}
+
+// 控制 popup 展示
+const isVisable = ref(false)
+const onShowPopup = () => {
+  isVisable.value = true
 }
 </script>
 
