@@ -44,7 +44,7 @@ const isLocked = useScrollLock(document.body)
 watch(
   () => isVisable,
   (val) => {
-    isLocked.value = val
+    isLocked.value = !val
   },
   {
     immediate: true

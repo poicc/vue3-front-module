@@ -32,13 +32,15 @@
     </ul>
   </div>
   <m-popup v-model="isVisable">
-    <div>内容</div>
+    <menu-vue :categorys="data" @onItemClick="onItemClick"/>
   </m-popup>
 </template>
 
 <script setup>
 import { ref, onBeforeUpdate, watch } from 'vue'
 import { useScroll } from '@vueuse/core'
+import MenuVue from '@/views/main/components/menu/index.vue'
+
 defineProps({
   data: {
     type: Array,
@@ -84,6 +86,7 @@ watch(currentCategoryIndex, (val) => {
 
 const onItemClick = (index) => {
   currentCategoryIndex.value = index
+  isVisable.value = false
 }
 
 // 控制 popup 展示
