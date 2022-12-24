@@ -21,6 +21,8 @@
       ></m-svg-icon>
       <!-- 分割线 -->
       <div class=" opacity-0 h-1.5 w-[1px] absolute translate-y-[-50%] top-[50%] right-[62px] duration-500 bg-zinc-200 group-hover:opacity-100"></div>
+      <!-- 搜索按钮 -->
+      <m-button class=" absolute translate-y-[-50%] top-[50%] right-1 rounded-full" icon="search" iconColor="#fff"></m-button>
     </div>
     <!-- 下拉区 -->
     <transition name="slide">
