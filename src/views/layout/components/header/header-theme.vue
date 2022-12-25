@@ -1,5 +1,5 @@
 <template>
-  <m-popover>
+  <m-popover placement="bottom-left">
     <template #reference>
       <m-svg-icon
         name="theme-light"
@@ -15,7 +15,7 @@
       >
         <m-svg-icon
           :name="item.icon"
-          class="w-1.5 h-0.5 mr-1"
+          class="w-1.5 h-1.5 mr-1"
           fillClass="fill-zinc-900"
         ></m-svg-icon>
         <span class="text-zinc-900 text-sm">{{ item.name }}</span>

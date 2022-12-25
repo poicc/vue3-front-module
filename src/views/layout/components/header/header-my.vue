@@ -1,5 +1,5 @@
 <template>
-  <div>my</div>
+  <div>myu</div>
 </template>
 
 <script setup>
