@@ -1,4 +1,4 @@
-import { ALL_CATEGORY_ITEM } from '@/constants'
+import { ALL_CATEGORY_ITEM, CATEGORY_NOMAR_DATA } from '@/constants'
 import { getCategory } from '@/api/category'
 
 /**
@@ -9,7 +9,10 @@ export default {
   namespaced: true,
   state: () => {
     return {
-      categorys: [ALL_CATEGORY_ITEM]
+      // 让categorys具备一个初始化数据
+      // 从服务端获取数据 替换初始化数据
+      // 为了防止初始化数据太老 把每次获取到的新数据 作为下一次的初始化数据
+      categorys: CATEGORY_NOMAR_DATA
     }
   },
   mutations: {
