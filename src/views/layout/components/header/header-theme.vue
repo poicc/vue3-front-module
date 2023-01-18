@@ -2,7 +2,7 @@
   <m-popover placement="bottom-left">
     <template #reference>
       <m-svg-icon
-        name="theme-light"
+        :name="svgIconName"
         class="w-4 h-4 p-1 cursor-pointer rounded-sm duration-200 outline-none hover:bg-zinc-100/60 dark:hover:bg-zinc-900"
         fillClass="fill-zinc-900 dark:fill-zinc-300"
       ></m-svg-icon>
@@ -12,6 +12,7 @@
         class="flex items-center p-1 cursor-pointer rounded hover:bg-zinc-100/60 dark:hover:bg-zinc-800"
         v-for="item in themeArr"
         :key="item.id"
+        @click="onItemClikck(item)"
       >
         <m-svg-icon
           :name="item.icon"
@@ -25,8 +26,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
 import { THEME_LIGHT, THEME_DARK, THEME_SYSTEM } from '@/constants'
+import { useStore } from 'vuex';
+const store = useStore()
+
 const themeArr = [
   {
     id: '0',
@@ -52,6 +56,24 @@ const themeArr = [
 // 2.根据行为保存当前需要展示的主题到 vuex 中
 // 3.根据 vuex 中保存的当前主题，展示 header-theme 下的显示图标
 // 4.根据 vuex 中保存的当前主题，修改 html 的 class
+
+/**
+ * menu 切换事件
+ */
+const onItemClikck = (themeItem) => {
+  store.commit('theme/changeThemeType', themeItem.type)
+}
+
+/**
+ * 展示图标
+ */
+const svgIconName = computed(() => {
+  const findTheme = themeArr.find(item => {
+    return item.type === store.getters.themeType
+  })
+
+  return findTheme?.icon
+})
 </script>
 
 <style lang="scss" scoped></style>
