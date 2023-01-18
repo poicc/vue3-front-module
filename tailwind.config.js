@@ -1,4 +1,6 @@
 module.exports = {
+  // 手动切换暗黑模式
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{vue,js}'],
   theme: {
     extend: {
@@ -10,7 +12,8 @@ module.exports = {
         xl: ['0.65rem', '0.75rem'],
       },
       boxShadow: {
-        'l-white': '-10px 0 10px white'
+        'l-white': '-10px 0 10px white',
+        'l-zince': '-10px 0 10px #18181b',
       },
       height: {
         header: '72px',
