@@ -3,10 +3,10 @@
     class="relative"
     ref="containerTarget"
     :style="{
-      height: containerHeight + 'px'
+      height: containerHeight + 'px' // 因为当前为 relative 布局，所以需要主动指定高度
     }"
   >
-    <!-- 数据渲染 -->
+    <!-- 因为列数不确定，所以需要根据列数计算每列的宽度，所以等待列宽计算完成，并且有了数据源之后进行渲染 -->
     <template v-if="columnWidth && data.length">
       <div
         v-for="(item, index) in data"
@@ -27,7 +27,8 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, nextTick, watch } from 'vue'
+import { getImgElements, getAllImg, onCompleteImgs } from './util'
 const props = defineProps({
   // 数据源
   data: {
@@ -59,7 +60,6 @@ const props = defineProps({
     type: Boolean
   }
 })
-
 // 容器的总高度 = 最高的这一列的高度
 const containerHeight = ref(0)
 // 记录每一列高度的容器 key:所在列 val:列高
@@ -92,7 +92,7 @@ const useContainerWidth = () => {
   containerLeft.value = parseFloat(paddingLeft)
   // 容器的宽度
   containerWidth.value =
-  containerTarget.value.offsetWidth -
+    containerTarget.value.offsetWidth -
     parseFloat(paddingLeft) -
     parseFloat(paddingRight)
 }
@@ -119,6 +119,71 @@ onMounted(() => {
   // 计算列宽
   useColumnWidth()
 })
+
+// item 高度合集
+let itemHeights = []
+/**
+ * 监听图片加载完成(需要图片预加载)
+ */
+const waitImgComplate = () => {
+  itemHeights = []
+  // 拿到所有的元素
+  let itemElements = [...document.getElementsByClassName('m-waterfall-item')]
+  // 获取到元素的 img 标签
+  const imgElements = getImgElements(itemElements)
+  // 获取所有 img 标签的图片
+  const allImgs = getAllImg(imgElements)
+  // 等待图片加载完成
+  onCompleteImgs(allImgs).then(() => {
+    // 图片加载完成
+    itemElements.forEach((el) => {
+      itemHeights.push(el.offsetHeight)
+    })
+    // 渲染位置
+    useItemLocation()
+  })
+}
+
+/**
+ * 不需要图片预加载
+ */
+const useItemHeight = () => {
+  itemHeights = []
+  let itemElements = [...document.getElementsByClassName('m-waterfall-item')]
+  // 计算 item 高度
+  itemElements.forEach((el) => {
+    itemElements.push(el.offsetHeight)
+  })
+  // 渲染位置
+  useItemLocation()
+}
+
+/**
+ * 渲染位置
+ */
+const useItemLocation = () => {
+  console.log(itemHeights)
+}
+
+/**
+ * 触发计算
+ */
+watch(
+  () => props.data,
+  (newVal) => {
+    nextTick(() => {
+      if (props.picturePreReading) {
+        waitImgComplate()
+      } else {
+        useItemHeight()
+      }
+    })
+  },
+  {
+    deep: true,
+    immediate: true
+  }
+)
 </script>
 
 <style lang="scss" scoped></style>
