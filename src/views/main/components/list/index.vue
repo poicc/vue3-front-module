@@ -1,6 +1,10 @@
 <template>
   <div>
-    <item-vue v-for="item in pexlesList" :key="item.id" :data="item"></item-vue>
+    <m-waterfull :data="pexlesList" nodeKey="id" :column="5" :pictureReading="true">
+      <template v-slot="{ item, width }">
+        <item-vue :data="item"></item-vue>
+      </template>
+    </m-waterfull>
   </div>
 </template>
 
