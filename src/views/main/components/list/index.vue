@@ -1,8 +1,13 @@
 <template>
   <div>
-    <m-waterfull :data="pexlesList" nodeKey="id" :column="5" :picturePreReading="true">
+    <m-waterfull
+    class="px-1 w-full"
+      :data="pexlesList"
+      :column="isMobileTerminal ? 2 : 5"
+      :picturePreReading="false"
+    >
       <template v-slot="{ item, width }">
-        <item-vue :data="item"></item-vue>
+        <item-vue :data="item" :width="width"></item-vue>
       </template>
     </m-waterfull>
   </div>
@@ -12,7 +17,7 @@
 import { getPexlesList } from '@/api/pexels'
 import { ref } from 'vue'
 import itemVue from './item.vue'
-
+import { isMobileTerminal } from '@/utils/flexible'
 /**
  * 构建数据请求
  */

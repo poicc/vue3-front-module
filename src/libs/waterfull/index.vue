@@ -27,8 +27,15 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, nextTick, watch, onUnmounted} from 'vue'
-import { getImgElements, getAllImg, onCompleteImgs, getMinHeightColumn, getMinHeight, getMaxHeight } from './util'
+import { ref, computed, onMounted, nextTick, watch, onUnmounted } from 'vue'
+import {
+  getImgElements,
+  getAllImg,
+  onComplateImgs,
+  getMinHeightColumn,
+  getMinHeight,
+  getMaxHeight
+} from './util'
 const props = defineProps({
   // 数据源
   data: {
@@ -101,6 +108,7 @@ const useContainerWidth = () => {
 const columnWidth = ref(0)
 // 列间距的合计
 const columnSpacingTotal = computed(() => {
+  // 如果是5列，则存在 4 个列间距
   return (props.column - 1) * props.columnSpacing
 })
 
@@ -152,7 +160,7 @@ const useItemHeight = () => {
   let itemElements = [...document.getElementsByClassName('m-waterfall-item')]
   // 计算 item 高度
   itemElements.forEach((el) => {
-    itemElements.push(el.offsetHeight)
+    itemHeights.push(el.offsetHeight)
   })
   // 渲染位置
   useItemLocation()
@@ -181,15 +189,15 @@ const useItemLocation = () => {
   containerHeight.value = getMaxHeight(columnHeightObj.value)
 }
 
-
-
 /**
  * 返回下一个 item 的 left
  */
 const getItemLeft = () => {
   // 拿到最小宽度的列索引
   const column = getMinHeightColumn(columnHeightObj.value)
-  return column * (columnWidth.value + props.columnSpacing) + containerLeft.value
+  return (
+    column * (columnWidth.value + props.columnSpacing) + containerLeft.value
+  )
 }
 
 const getItemTop = () => {
@@ -203,7 +211,8 @@ const increasingHeight = (index) => {
   // 最小高度所在的列
   const minHeightColumn = getMinHeightColumn(columnHeightObj.value)
   // 使该列自增
-  columnHeightObj.value[minHeightColumn] += itemHeights[index] + props.rowSpacing
+  columnHeightObj.value[minHeightColumn] +=
+    itemHeights[index] + props.rowSpacing
 }
 
 /**
@@ -215,7 +224,7 @@ watch(
     nextTick(() => {
       // 第一次获取数据时 构建高度记录容器
       const resetColumnHeight = newVal.every((item) => !item._style)
-      if(resetColumnHeight) {
+      if (resetColumnHeight) {
         // 构建高度记录容器
         useColumnHeightObj()
       }
@@ -241,6 +250,36 @@ onUnmounted(() => {
     delete item._style
   })
 })
+
+/**
+ * 重新构建瀑布流
+ */
+
+const reset = () => {
+  setTimeout(() => {
+    useColumnWidth()
+    // 重置所有定位数据
+    props.data.forEach((item) => {
+      item._style = null
+    })
+  }, 100)
+}
+
+/**
+ * 监听列数的变化
+ */
+watch(
+  () => props.column,
+  () => {
+    if (props.picturePreReading) {
+      columnWidth.value = 0
+      // 重新计算列宽
+      nextTick(reset)
+    } else {
+      reset()
+    }
+  }
+)
 </script>
 
 <style lang="scss" scoped></style>

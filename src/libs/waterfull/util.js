@@ -25,7 +25,7 @@ export const getAllImg = (imgElements) => {
  * @param {*} imgs 
  * @returns 
  */
-export const onCompleteImgs = (imgs) => {
+export const onComplateImgs = (imgs) => {
   // promise集合
   const promiseAll = []
   imgs.forEach((img, index) => {
@@ -48,16 +48,16 @@ export const onCompleteImgs = (imgs) => {
  * 返回列高对象中最小的高度
  */
 export const getMinHeight = (columnHeightObj) => {
-  const columnHeight = Object.values(columnHeightObj)
-  return Math.min(...columnHeight)
+  const columnHeightArr = Object.values(columnHeightObj)
+  return Math.min(...columnHeightArr)
 }
 
 /**
  * 返回列高对象中最大的高度
  */
 export const getMaxHeight = (columnHeightObj) => {
-  const columnHeight = Object.values(columnHeightObj)
-  return Math.max(...columnHeight)
+  const columnHeightArr = Object.values(columnHeightObj)
+  return Math.max(...columnHeightArr)
 }
 
 /**

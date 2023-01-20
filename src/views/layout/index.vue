@@ -1,19 +1,18 @@
 <template>
-    <div class=" h-screen">
-      <header-vue class="h-header"></header-vue>
-      <main-vue class="h-main"></main-vue>
-      <floating-vue></floating-vue>
+  <div class="h-screen">
+    <header-vue class="h-header"></header-vue>
+    <div class="h-main">
+      <main-vue></main-vue>
     </div>
+    <floating-vue></floating-vue>
+  </div>
 </template>
 
 <script setup>
-import { ref } from "vue" 
+import { ref } from 'vue'
 import headerVue from './components/header/index.vue'
 import mainVue from './components/main.vue'
-import floatingVue from "./components/floating.vue";
-
+import floatingVue from './components/floating.vue'
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
