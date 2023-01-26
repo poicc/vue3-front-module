@@ -28,6 +28,12 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) =>
             path.replace(new RegExp("^/api"), "/"),
+      },
+      '/prod-api': {
+        target: 'https://api.imooc-front.lgdsunday.club/prod-api/',
+        changeOrigin: true,
+        rewrite: (path) =>
+            path.replace(new RegExp("^/prod-api"), "/"),
       }
     }
   }
