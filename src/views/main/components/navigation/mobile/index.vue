@@ -21,10 +21,10 @@
         v-for="(item, index) in $store.getters.categorys"
         :key="item.id"
         :ref="setItemRef"
-        @click="onItemClick(index)"
+        @click="onItemClick(item)"
         class="shrink-0 px-1.5 py-0.5 z-10 duration-200 last:mr-4"
         :class="{
-          'text-zinc-100': currentCategoryIndex === index
+          'text-zinc-100': $store.getters.currentCategoryIndex === index
         }"
       >
         {{ item.name }}
@@ -32,7 +32,7 @@
     </ul>
   </div>
   <m-popup v-model="isVisable">
-    <menu-vue @onItemClick="onItemClick"/>
+    <menu-vue @onItemClick="onItemClick()"/>
   </m-popup>
 </template>
 
@@ -40,7 +40,9 @@
 import { ref, onBeforeUpdate, watch } from 'vue'
 import { useScroll } from '@vueuse/core'
 import MenuVue from '@/views/main/components/menu/index.vue'
+import { useStore } from 'vuex';
 
+const store = useStore()
 
 // 滑块
 const sliderStyle = ref({
@@ -48,8 +50,6 @@ const sliderStyle = ref({
   width: '60px'
 })
 
-// 选中 item 下标
-const currentCategoryIndex = ref(0)
 
 // 获取所有的 item 元素
 let itemRefs = []
@@ -68,8 +68,8 @@ const ulTarget = ref()
 // 获取响应式的滚动距离
 const { x: ulScrollLeft } = useScroll(ulTarget)
 
-// 监听currentCategoryIndex
-watch(currentCategoryIndex, (val) => {
+// 监听currentCategoryIndex 监听getters 需要返回一个函数
+watch(() => store.getters.currentCategoryIndex, (val) => {
   const { left, width } = itemRefs[val].getBoundingClientRect()
   sliderStyle.value = {
     // 滑块的位置 = ul 横向滚动的位置 + 当前元素的left - ul的padding
@@ -78,8 +78,8 @@ watch(currentCategoryIndex, (val) => {
   }
 })
 
-const onItemClick = (index) => {
-  currentCategoryIndex.value = index
+const onItemClick = (item) => {
+  store.commit('app/changeCurrentCategory', item)
   isVisable.value = false
 }
 

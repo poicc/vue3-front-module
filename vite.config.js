@@ -24,7 +24,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://mock.apifox.cn/m1/2058081-0-default/',
+        target: 'https://api.imooc-front.lgdsunday.club/api/',
         changeOrigin: true,
         rewrite: (path) =>
             path.replace(new RegExp("^/api"), "/"),
