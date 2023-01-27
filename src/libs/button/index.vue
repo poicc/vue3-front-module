@@ -32,6 +32,8 @@
 
 <script>
 import { computed } from 'vue'
+import mSvgIcon from '../svg-icon/index.vue'
+
 const EMITS_CLICK = 'click'
 // type按钮风格可选项
 const typeEnum = {
