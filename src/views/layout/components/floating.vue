@@ -43,7 +43,38 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+// 1.导入
+import Driver from 'driver.js'
+import 'driver.js/dist/driver.min.css'
+import steps from './steps.js'
+import { ref, onMounted } from 'vue'
+
+// 2.初始化
+let driver = null
+onMounted(() => {
+  driver = new Driver({
+    // 禁止点击蒙版关闭
+    allowClose: false,
+    closeBtnText: '关闭',
+    nextBtnText: '下一个',
+    prevBtnText: '上一个'
+  })
+})
+
+/**
+ * 开始引导
+ */
+ const onGuideClick = () => {
+  // 指定步骤
+  driver.defineSteps(steps)
+  // 开始引导
+  driver.start()
+}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.driver-fix-stacking {
+  position: fixed;
+  z-index: 100004 !important;
+}
+</style>
