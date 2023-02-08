@@ -12,10 +12,20 @@
         :picturePreReading="false"
       >
         <template v-slot="{ item, width }">
-          <item-vue :data="item" :width="width"></item-vue>
+          <item-vue :data="item" :width="width" @click="onToPins"></item-vue>
         </template>
       </m-waterfull>
     </m-infinite>
+
+    <!-- 详情内容展示  -->
+    <transition
+      :css="false"
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
+    >
+      <pins-vue v-if="isVisiblePins" :id="currentPins.id"></pins-vue>
+    </transition>
   </div>
 </template>
 
@@ -25,6 +35,7 @@ import { ref, watch } from 'vue'
 import itemVue from './item.vue'
 import { isMobileTerminal } from '@/utils/flexible'
 import { useStore } from 'vuex'
+import pinsVue from '../../../pins/components/pins.vue'
 
 const store = useStore()
 /**
@@ -91,7 +102,7 @@ watch(
 /**
  * 监听搜索内容项的变化
  */
- watch(
+watch(
   () => store.getters.searchText,
   (val) => {
     // 重置请求参数
@@ -101,6 +112,22 @@ watch(
     })
   }
 )
+
+//控制 pins 展示
+const isVisiblePins = ref(false)
+// 当前选中的 pins 属性
+const currentPins = ref({})
+
+/**
+ * 进入 pins
+ */
+const onToPins = (item) => {
+  history.pushState(null, null, `/pins/${item.id}`)
+  currentPins.value = item
+  isVisiblePins.value = true
+}
+
+
 </script>
 
 <style lang="scss" scoped></style>

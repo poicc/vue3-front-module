@@ -3,6 +3,7 @@
     <div
       class="relative w-full rounded cursor-zoom-in group"
       :style="{ backgroundColor: randomRGB() }"
+      @click="onToPinsClick"
     >
       <!-- 图片 -->
       <img
@@ -75,6 +76,8 @@ const props = defineProps({
   }
 })
 
+const emits = defineEmits(['click'])
+
 /**
  * 下载按钮点击事件
  */
@@ -94,6 +97,15 @@ const onDownload = () => {
  */
 const imgTarget = ref(null)
 const { enter: onImgFullScreen } = useFullscreen(imgTarget)
+
+/**
+ * 进入详情点击事件
+ */
+const onToPinsClick = () => {
+  emits('click',{
+    id: props.data.id
+  })
+}
 </script>
 
 <style lang="scss" scoped></style>
