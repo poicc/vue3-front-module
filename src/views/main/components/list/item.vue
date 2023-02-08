@@ -63,8 +63,8 @@
 import { randomRGB } from '@/utils/color'
 import { saveAs } from 'file-saver'
 import { message } from '@/libs'
-import { ref } from 'vue'
-import { useFullscreen } from '@vueuse/core'
+import { ref, computed } from 'vue'
+import { useFullscreen, useElementBounding } from '@vueuse/core'
 
 const props = defineProps({
   data: {
@@ -99,11 +99,28 @@ const imgTarget = ref(null)
 const { enter: onImgFullScreen } = useFullscreen(imgTarget)
 
 /**
+ * pins 跳转记录 记录图片的中心点（x | y 位置 + 宽 ｜ 高 一半）
+ */
+const {
+  x: imgContainerX,
+  y: imgContainerY,
+  width: imgContainerWidth,
+  height: imgContainerHeight
+} = useElementBounding(imgTarget)
+const imgContainerCenter = computed(() => {
+  return {
+    translateX: parseInt(imgContainerX.value + imgContainerWidth / 2),
+    translateY: parseInt(imgContainerY.value + imgContainerHeight / 2)
+  }
+})
+
+/**
  * 进入详情点击事件
  */
 const onToPinsClick = () => {
-  emits('click',{
-    id: props.data.id
+  emits('click', {
+    id: props.data.id,
+    location: imgContainerCenter
   })
 }
 </script>
