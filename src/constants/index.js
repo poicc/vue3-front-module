@@ -36,3 +36,9 @@ export const THEME_LIGHT = 'THEME_LIGHT'
 export const THEME_DARK = 'THEME_DARK'
 // 跟随系统
 export const THEME_SYSTEM = 'THEME_SYSTEM'
+
+// 登录方式
+export const LOGIN_TYPE_USERNAME = 'username'
+export const LOGIN_TYPE_OAUTH_NO_REGISTER_CODE = 204
+export const LOGIN_TYPE_QQ = 'QQ'
+export const LOGIN_TYPE_WX = 'WX'
