@@ -3,6 +3,7 @@
     <template #reference>
       <div
         class="guide-my relative flex items-center p-0.5 rounded-sm cursor-pointer duration-200 outline-none hover:bg-zinc-100 dark:hover:bg-zinc-900"
+        v-if="false"
       >
         <img
           v-lazy
@@ -22,10 +23,13 @@
           name="vip"
         ></m-svg-icon>
       </div>
+      <div class="guide-my" v-else>
+        <m-button icon="profile" iconColor="#fff" @click="onToLogin"></m-button>
+      </div>
     </template>
 
     <!-- 气泡 -->
-    <div class="w-[140px] overflow-hidden">
+    <div v-if="false" class="w-[140px] overflow-hidden">
       <div
         class="flex items-center p-1 cursor-pointer rounded hover:bg-zinc-100/60"
         v-for="item in menuArr"
@@ -45,6 +49,10 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
 const menuArr = [
   {
     id: '0',
@@ -65,6 +73,13 @@ const menuArr = [
     title: '退出登录'
   }
 ]
+
+/**
+ * 登录按钮点击事件
+ */
+const onToLogin = () => {
+  router.push('/login')
+}
 </script>
 
 <style lang="scss" scoped></style>
