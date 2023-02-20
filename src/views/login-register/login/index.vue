@@ -66,11 +66,20 @@
         </div>
       </vee-form>
     </div>
+
+    <!-- 人类行为验证模块 -->
+    <slider-captcha-vue
+      v-if="isSliderCaptchaVisible"
+      @close="isSliderCaptchaVisible = false"
+      @success="onCaptchaSuccess"
+    ></slider-captcha-vue>
   </div>
 </template>
 
 <script setup>
 import headerVue from '../components/header.vue'
+import sliderCaptchaVue from './slider-captcha.vue'
+import { ref } from 'vue'
 import {
   Form as VeeForm,
   Field as VeeField,
@@ -78,10 +87,22 @@ import {
 } from 'vee-validate'
 import { validateUsername, validatePassword } from '../validate'
 
+// 控制 sliderCaptcha 展示
+const isSliderCaptchaVisible = ref(false)
 /**
  * 触发登录
  */
-const onLoginHandler = () => {}
+const onLoginHandler = () => {
+  isSliderCaptchaVisible.value = true
+}
+
+/**
+ * 人类行为验证成功回调
+ */
+const onCaptchaSuccess = () => {
+  isSliderCaptchaVisible.value = false
+  // 登录操作
+}
 </script>
 
 <style lang="scss" scoped></style>
