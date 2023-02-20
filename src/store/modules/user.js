@@ -1,5 +1,5 @@
 import md5 from 'md5'
-import { loginUser, getProfile } from '@/api/sys'
+import { loginUser, getProfile,registerUser } from '@/api/sys'
 import { message } from '@/libs'
 
 /**
@@ -20,6 +20,17 @@ export default {
     }
   },
   actions: {
+    /**
+     * 注册
+     */
+    async register(context, payload) {
+      // 加密密码
+      const { password } = payload
+      return await registerUser({
+        ...payload,
+        password: password ? md5(password) : ''
+      })
+    },
     /**
      * 登录
      */

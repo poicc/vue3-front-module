@@ -26,12 +26,22 @@ service.interceptors.request.use(
 /**
  * 响应拦截器
  */
-service.interceptors.response.use((response) => {
-  const { success, message, data } = response.data
-  if (success) {
-    return data
+service.interceptors.response.use(
+  (response) => {
+    const { success, message, data } = response.data
+    if (success) {
+      return data
+    }
+    return Promise.reject(new Error(message))
+  },
+  (error) => {
+    // 处理token 超时
+    if (error.response?.data?.code === 401) {
+      // 退出
+      store.dispatch('user/logout')
+    }
+    return Promise.reject(error)
   }
-  return Promise.reject(new Error(message))
-})
+)
 
 export default service
