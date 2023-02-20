@@ -48,6 +48,17 @@ export default {
         }`,
         6000
       )
+    },
+    /**
+     * 退出登录
+     */
+    logout(contenxt) {
+      // 清空token
+      contenxt.commit('setToken', '')
+      // 清空用户信息
+      contenxt.commit('setUserInfo', {})
+      // 刷新页面
+      location.reload()
     }
   }
 }

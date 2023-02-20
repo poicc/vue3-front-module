@@ -20,5 +20,9 @@ export default {
   /**
    * token
    */
-  token: (state) => state.user.token
+  token: (state) => state.user.token,
+  /**
+   * userInfo
+   */
+  userInfo: (state) => state.user.userInfo
 }

@@ -3,12 +3,15 @@
     <template #reference>
       <div
         class="guide-my relative flex items-center p-0.5 rounded-sm cursor-pointer duration-200 outline-none hover:bg-zinc-100 dark:hover:bg-zinc-900"
-        v-if="false"
+        v-if="$store.getters.token"
       >
         <img
           v-lazy
           class="w-3 h-3 rounded-sm"
-          src="https://avatars.githubusercontent.com/u/59445871?v=4"
+          :src="
+            $store.getters.userInfo.avatar ||
+            'https://avatars.githubusercontent.com/u/59445871?v=4'
+          "
           alt=""
         />
         <!-- 下箭头 -->
@@ -21,6 +24,7 @@
         <m-svg-icon
           class="h-1.5 w-1.5 absolute right-[16px] bottom-0"
           name="vip"
+          v-if="$store.getters.userInfo.vipLevel"
         ></m-svg-icon>
       </div>
       <div class="guide-my" v-else>
@@ -29,11 +33,12 @@
     </template>
 
     <!-- 气泡 -->
-    <div v-if="false" class="w-[140px] overflow-hidden">
+    <div v-if="$store.getters.token" class="w-[140px] overflow-hidden">
       <div
         class="flex items-center p-1 cursor-pointer rounded hover:bg-zinc-100/60"
         v-for="item in menuArr"
         :key="item.id"
+        @click="onItemClick(item)"
       >
         <m-svg-icon
           :name="item.icon"
@@ -50,7 +55,10 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
+import { confirm } from '@/libs'
 
+const store = useStore()
 const router = useRouter()
 
 const menuArr = [
@@ -79,6 +87,18 @@ const menuArr = [
  */
 const onToLogin = () => {
   router.push('/login')
+}
+
+/**
+ * menu点击事件
+ */
+const onItemClick = (item) => {
+  if (item.id === '2') {
+    // 退出登录
+    confirm('您确定要退出登录吗').then(() => {
+      store.dispatch('user/logout')
+    })
+  }
 }
 </script>
 
