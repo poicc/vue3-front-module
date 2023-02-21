@@ -19,4 +19,13 @@ export default [
     name: 'register',
     component:() => import('@/views/login-register/register/index.vue'),
   },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import('@/views/profile/index.vue'),
+    // 标记当前页面只有用户登录才能进入
+    meta: {
+      user: true
+    }
+  }
 ]

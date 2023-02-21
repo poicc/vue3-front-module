@@ -22,7 +22,7 @@
       v-if="max"
       class="absolute right-1 bottom-0.5 text-zinc-400 text-xs"
       :class="{ 'text-red-700': currentNumber === parseInt(max) }"
-      >{{ currentNumber / max }}</span
+      >{{ currentNumber }} / {{ max }}</span
     >
   </div>
 </template>
