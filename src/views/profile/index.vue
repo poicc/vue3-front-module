@@ -3,7 +3,7 @@
     class="h-full bg-zinc-200 dark:bg-zinc-800 duration-500 overflow-auto xl:pt-1"
   >
     <div
-    class="relative max-w-screen-lg mx-auto bg-white dark:bg-zinc-900 duration-400 xl:rounded-sm xl:border-zinc-200 xl:dark:border-zinc-600 xl:border-[1px] xl:px-4 xl:py-2"
+      class="relative max-w-screen-lg mx-auto bg-white dark:bg-zinc-900 duration-400 xl:rounded-sm xl:border-zinc-200 xl:dark:border-zinc-600 xl:border-[1px] xl:px-4 xl:py-2"
     >
       <!-- 移动端 navbar -->
       <m-navbar sticky v-if="isMobileTerminal" :clickLeft="onNavbarLeftClick"
@@ -157,7 +157,7 @@
 
 <script setup>
 import { isMobileTerminal } from '@/utils/flexible'
-// import { putProfile } from '@/api/sys'
+import { putProfile } from '@/api/sys'
 import { message, confirm } from '@/libs'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
@@ -186,6 +186,12 @@ const onLogoutClick = () => {
  * 数据本地的双向同步，增加一个单层深拷贝
  */
 const userInfo = ref({ ...store.getters.userInfo })
+// const changeStoreUserInfo = (key, value) => {
+//     store.commit('user/setUserInfo', {
+//     ...store.getters.userInfo,
+//     [key]: value
+//   })
+// }
 
 /**
  * 选择头像
@@ -199,6 +205,18 @@ const onAvatarClick = () => {
  * 选中文件之后的回调
  */
 const onSelectImgHandler = () => {}
+
+/**
+ * 修改个人信息
+ */
+const loading = ref(false)
+const onChangeProfile = async () => {
+  loading.value = true
+  await putProfile(userInfo.value)
+  message('success', '用户信息修改成功')
+  store.commit('user/setUserInfo', userInfo.value)
+  loading.value = false
+}
 </script>
 
 <style lang="scss" scoped></style>
