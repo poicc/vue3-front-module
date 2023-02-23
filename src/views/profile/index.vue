@@ -1,39 +1,38 @@
 <template>
   <div
-    class="h-full bg-zinc-200 dark:bg-zinc-800 duration-500 overflow-auto xl:pt-1"
+    class="h-full bg-zinc-200 dark:bg-zinc-800 duration-400 overflow-auto xl:pt-1"
   >
     <div
       class="relative max-w-screen-lg mx-auto bg-white dark:bg-zinc-900 duration-400 xl:rounded-sm xl:border-zinc-200 xl:dark:border-zinc-600 xl:border-[1px] xl:px-4 xl:py-2"
     >
       <!-- 移动端 navbar -->
-      <m-navbar sticky v-if="isMobileTerminal" :clickLeft="onNavbarLeftClick"
-        >个人资料
+      <m-navbar sticky v-if="isMobileTerminal" :clickLeft="onNavbarLeftClick">
+        个人资料
       </m-navbar>
-      <!-- PC 端标题 -->
+      <!-- pc 端 -->
       <div v-else class="text-lg font-bold text-center mb-4 dark:text-zinc-300">
         个人资料
       </div>
-
       <div class="h-full w-full px-1 pb-4 text-sm mt-2 xl:w-2/3 xl:pb-0">
-        <!-- 头像部分 -->
+        <!-- 头像 -->
         <div class="py-1 xl:absolute xl:right-[16%] xl:text-center">
           <span
             class="w-8 inline-block mb-2 font-bold text-sm dark:text-zinc-300 xl:block xl:mx-auto"
             >我的头像</span
           >
+          <!-- 头像部分 -->
           <div
             class="relative w-[80px] h-[80px] group xl:cursor-pointer xl:left-[50%] xl:translate-x-[-50%]"
             @click="onAvatarClick"
           >
-            <!-- 头像 -->
             <img
-              class="rounded-[50%] w-full h-full xl:inline-block"
+              v-lazy
               :src="$store.getters.userInfo.avatar"
               alt=""
+              class="rounded-[50%] w-full h-full xl:inline-block"
             />
-            <!-- 鼠标移入 -->
             <div
-              class="absolute top-0 rounded-full w-full h-full bg-black/40 hidden xl:group-hover:block"
+              class="absolute top-0 rounded-[50%] w-full h-full bg-[rgba(0,0,0,.4)] hidden xl:group-hover:block"
             >
               <m-svg-icon
                 name="change-header-image"
@@ -48,17 +47,16 @@
           </div>
           <!-- 隐藏域 -->
           <input
-            type="file"
-            v-show="flase"
+            v-show="false"
             ref="inputFileTarget"
-            accept=".png,.jpeg,jpg,.gif"
+            type="file"
+            accept=".png, .jpeg, .jpg, .gif"
             @change="onSelectImgHandler"
           />
           <p class="mt-1 text-zinc-500 dark:text-zinc-400 text-xs xl:w-10">
             支持 jpg、png、jpeg 格式大小 5M 以内的图片
           </p>
         </div>
-        <!-- 信息输入 -->
         <!-- 用户名 -->
         <div class="py-1 xl:flex xl:items-center xl:my-1">
           <span class="w-8 block mb-1 font-bold dark:text-zinc-300 xl:mb-0"
@@ -186,7 +184,7 @@ const onLogoutClick = () => {
 // 控制 dialog 的展示
 const isDialogVisible = ref(false)
 // 选中的图片
-const currentBlob = ref('')
+const currentBolb = ref('')
 
 /**
  * 数据本地的双向同步，增加一个单层深拷贝
@@ -216,7 +214,7 @@ const onSelectImgHandler = () => {
   // 生成blob对象
   const blob = URL.createObjectURL(imgFile)
   // 获取到 blob（类文件对象）
-  currentBlob.value = blob
+  currentBolb.value = blob
   // 展示 dialog
   isDialogVisible.value = true
 }
