@@ -162,7 +162,7 @@ import { message, confirm } from '@/libs'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import { ref, watch } from 'vue'
-// import changeAvatarVue from './components/change-avatar.vue'
+import changeAvatarVue from './components/change-avatar.vue'
 
 const store = useStore()
 const router = useRouter()
@@ -182,6 +182,12 @@ const onLogoutClick = () => {
     store.dispatch('user/logout')
   })
 }
+
+// 控制 dialog 的展示
+const isDialogVisible = ref(false)
+// 选中的图片
+const currentBlob = ref('')
+
 /**
  * 数据本地的双向同步，增加一个单层深拷贝
  */
@@ -204,7 +210,26 @@ const onAvatarClick = () => {
 /**
  * 选中文件之后的回调
  */
-const onSelectImgHandler = () => {}
+const onSelectImgHandler = () => {
+  // 获取选中的文件
+  const imgFile = inputFileTarget.value.files[0]
+  // 生成blob对象
+  const blob = URL.createObjectURL(imgFile)
+  // 获取到 blob（类文件对象）
+  currentBlob.value = blob
+  // 展示 dialog
+  isDialogVisible.value = true
+}
+
+/**
+ * 当两次选择文件，是同一个的时候， change 的回调不会被再次触发
+ * 解决这个问题 需要在每次选择的图片不再被使用之后  清空掉inputTargrt 的 value
+ */
+watch(isDialogVisible, (val) => {
+  if (!val) {
+    inputFileTarget.value.value = null
+  }
+})
 
 /**
  * 修改个人信息
