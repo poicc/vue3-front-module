@@ -29,7 +29,7 @@
         icon="profile"
         iconClass="fill-zinc-900 dark:fill-zinc-200"
         textClass="text-zinc-400 dark:text-zinc-500"
-        @click="onVipClick"
+        @click="onMyClick"
         >{{ $store.getters.token ? '我的' : '去登录' }}</m-trigger-menu-item
       >
     </m-trigger-menu>
@@ -41,9 +41,20 @@ import navigationVue from './components/navigation/index.vue'
 import listVue from './components/list/index.vue'
 import { isMobileTerminal } from '@/utils/flexible'
 import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 
 const router = useRouter()
+const store = useStore()
 const onVipClick = () => {}
+const onMyClick = () => {
+  store.commit('app/changeRouterType','push')
+  if (store.getters.token) {
+    router.push('/profile')
+  } else {
+    router.push('/login')
+  }
+}
+
 </script>
 
 <style lang="scss" scoped></style>

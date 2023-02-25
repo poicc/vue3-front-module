@@ -86,6 +86,7 @@ const menuArr = [
  * 登录按钮点击事件
  */
 const onToLogin = () => {
+  store.commit('app/changeRouterType','push')
   router.push('/login')
 }
 
@@ -100,6 +101,7 @@ const onItemClick = (item) => {
     })
     return
   }
+  store.commit('app/changeRouterType','push')
   router.push(item.path)
 }
 </script>

@@ -25,7 +25,10 @@
     ></m-svg-icon>
 
     <!-- 内容区 -->
-    <div v-if="pexelData.title" class="xl:w-[80%] xl:h-full xl:mx-auto xl:rounded-lg xl:flex">
+    <div
+      v-if="pexelData.title"
+      class="xl:w-[80%] xl:h-full xl:mx-auto xl:rounded-lg xl:flex"
+    >
       <img
         class="w-screen mb-2 xl:w-3/5 xl:h-full xl:rounded-tl-lg xl:rounded-bl-lg"
         :src="pexelData.photo"
@@ -57,7 +60,9 @@
         <!-- 作者 -->
         <div class="flex items-center px-1 mt-1">
           <img class="h-3 w-3 rounded-full" :src="pexelData.avatar" alt="" />
-          <span class="text-base text-zinc-900 dark:text-zinc-200 ml-1">{{ pexelData.author }}</span>
+          <span class="text-base text-zinc-900 dark:text-zinc-200 ml-1">{{
+            pexelData.author
+          }}</span>
         </div>
       </div>
     </div>
@@ -69,6 +74,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { getPexelsFromId } from '@/api/pexels'
 import { isMobileTerminal } from '@/utils/flexible'
+import { useStore } from 'vuex'
 
 const props = defineProps({
   id: {
@@ -86,7 +92,9 @@ const getPexlesData = async () => {
 }
 getPexlesData()
 
+const store = useStore()
 const onPop = () => {
+  store.commit('app/changeRouterType', 'push')
   router.back()
 }
 </script>

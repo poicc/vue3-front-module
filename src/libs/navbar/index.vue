@@ -34,6 +34,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
+
 const props = defineProps({
   // 左边按钮的点击
   clickLeft: Function,
@@ -43,14 +45,17 @@ const props = defineProps({
   sticky: Boolean
 })
 
+const router = useRouter()
 const onClickLeft = () => {
   if(props.clickLeft) {
-    clickLeft()
+    props.clickLeft()
+    return
   }
+  router.back()
 }
 const onClickRight = () => {
   if(props.clickRight) {
-    clickRight()
+    props.clickRight()
   }
 }
 </script>

@@ -1,3 +1,5 @@
+import { isMobileTerminal } from '@/utils/flexible'
+
 export default {
   // 简单访问
   categorys: (state) => state.category.categorys,
@@ -24,5 +26,15 @@ export default {
   /**
    * userInfo
    */
-  userInfo: (state) => state.user.userInfo
+  userInfo: (state) => state.user.userInfo,
+  /**
+   * 路由跳转方式
+   */
+  routerType: (state) => {
+    // pc端下永远没有跳转动画
+    if (!isMobileTerminal.value) {
+      return 'none'
+    }
+    return state.app.routerType
+  }
 }

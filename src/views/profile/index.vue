@@ -169,6 +169,7 @@ const router = useRouter()
  * 移动端下 navbar 左侧点击事件
  */
 const onNavbarLeftClick = () => {
+  store.commit('app/changeRouterType','push')
   router.back()
 }
 
