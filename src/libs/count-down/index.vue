@@ -18,7 +18,7 @@ const INTERVAL_COUNT = 1000
 </script>
 
 <script setup>
-import { ref, onUnmounted, watch } from 'vue'
+import { ref, onUnmounted, watch, computed } from 'vue'
 import dayjs from './utils'
 
 const props = defineProps({
