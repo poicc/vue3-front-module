@@ -17,6 +17,15 @@ export default [
         meta: {
           user: true
         }
+      },
+      {
+        path: '/member',
+        name: 'member',
+        component: () => import('@/views/member/index.vue'),
+        // 标记当前页面只有用户登录才能进入
+        meta: {
+          user: true
+        }
       }
     ]
   },

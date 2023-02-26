@@ -68,7 +68,11 @@ onActivated(() => {
   containerTarget.value.scrollTop = containerTargetScrollY.value
 })
 
-const onVipClick = () => {}
+const onVipClick = () => {
+  store.commit('app/changeRouterType','push')
+  router.push('/member')
+}
+
 const onMyClick = () => {
   store.commit('app/changeRouterType', 'push')
   if (store.getters.token) {
