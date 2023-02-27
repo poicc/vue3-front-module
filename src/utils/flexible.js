@@ -5,9 +5,15 @@ const { width } = useWindowSize()
 /** 
  * 判断当前是否为移动设备 判断依据屏幕宽度是否小雨一个指定宽度(1280)
 */
+/**
+ * 判断当前是否为移动设备
+ */
 export const isMobileTerminal = computed(() => {
-  return width.value < PC_DEVICE_WIDTH
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
 })
+
 
 /** 
  * 动态指定rem基准值 最大为40px
