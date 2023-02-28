@@ -54,11 +54,48 @@ export const putProfile = (data) => {
   })
 }
 
-/**
+/** 
  * 获取 OSS 上传凭证
  */
 export const getSts = () => {
   return request({
     url: '/user/sts'
+  })
+}
+
+
+/**
+ * 微信登录前置数据获取
+ */
+export const getWXLoginData = () => {
+  return request({
+    url: '/sys/wxlogin/data'
+  })
+}
+
+/**
+ * 获取微信登录的 access_token
+ */
+export const getWXLoginToken = (appid, secret, code) => {
+  return request({
+    url: '/sys/wxlogin/access_token',
+    params: {
+      appid,
+      secret,
+      code
+    }
+  })
+}
+
+/**
+ * 获取微信登录的 用户数据
+ */
+export const getWXLoginUserInfo = (accessToken, openid) => {
+  return request({
+    url: '/sys/wxlogin/userinfo',
+    params: {
+      accessToken,
+      openid
+    }
   })
 }
