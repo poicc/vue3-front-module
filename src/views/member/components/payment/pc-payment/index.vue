@@ -29,7 +29,7 @@
 
 <script setup>
 import discountsVue from '../discounts.vue'
-// import { alipay } from '@/utils/pay'
+import { alipay } from '@/utils/pay'
 
 const props = defineProps({
   payData: {
@@ -39,7 +39,7 @@ const props = defineProps({
 })
 
 const onAliPayClick = () => {
-  // alipay(props.payData.title, props.payData.desc)
+  alipay(props.payData.title, props.payData.desc)
 }
 </script>
 

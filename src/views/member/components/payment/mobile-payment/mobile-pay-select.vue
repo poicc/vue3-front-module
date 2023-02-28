@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-// import { alipay } from '@/utils/pay'
+import { alipay } from '@/utils/pay'
 
 const props = defineProps({
   payData: {
@@ -25,6 +25,6 @@ const props = defineProps({
 })
 
 const onAlipay = () => {
-  // alipay(props.payData.title, props.payData.desc)
+  alipay(props.payData.title, props.payData.desc)
 }
 </script>
