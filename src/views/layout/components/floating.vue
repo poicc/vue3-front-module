@@ -48,6 +48,7 @@ import Driver from 'driver.js'
 import 'driver.js/dist/driver.min.css'
 import steps from './steps.js'
 import { ref, onMounted } from 'vue'
+import { FEEDBACK_URL } from '@/constants'
 
 // 2.初始化
 let driver = null
@@ -64,11 +65,18 @@ onMounted(() => {
 /**
  * 开始引导
  */
- const onGuideClick = () => {
+const onGuideClick = () => {
   // 指定步骤
   driver.defineSteps(steps)
   // 开始引导
   driver.start()
+}
+
+/**
+ * 用户反馈
+ */
+const onToFeedback = () => {
+  window.open(FEEDBACK_URL, '__blank')
 }
 </script>
 
