@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { storeKey } from 'vuex'
+import { message as $message } from '@/libs'
 import store from '@/store'
 
 const service = axios.create({
@@ -31,8 +31,10 @@ service.interceptors.response.use(
     const { success, message, data } = response.data
     if (success) {
       return data
+    } else {
+      $message('warn', message)
+      return Promise.reject(new Error(message))
     }
-    return Promise.reject(new Error(message))
   },
   (error) => {
     // 处理token 超时
@@ -40,6 +42,7 @@ service.interceptors.response.use(
       // 退出
       store.dispatch('user/logout')
     }
+    $message('error', error.response.data.message)
     return Promise.reject(error)
   }
 )

@@ -26,7 +26,7 @@
         >
         <!-- 点赞 -->
         <m-button
-          class="absolute top-1.5 right-1.5 bg-zinc-100/70"
+          class="absolute top-1.5 right-1.5"
           type="info"
           icon="heart"
           iconClass=" fill-zinc-900 dark:fill-zinc-200"

@@ -21,7 +21,7 @@
 
 <script>
 // 延迟关闭时间
-const DALEY_TIME = 1000
+const DALEY_TIME = 100
 // 左上
 const PROP_TOP_LEFT = 'top-left'
 // 右上
