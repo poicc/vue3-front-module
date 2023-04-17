@@ -27,14 +27,13 @@
       class="h-full w-5 absolute right-0 flex items-center justify-center"
       @click="onClickRight"
     >
-      <slot name="right"/>
+      <slot name="right" />
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
 
 const props = defineProps({
   // 左边按钮的点击
@@ -47,14 +46,14 @@ const props = defineProps({
 
 const router = useRouter()
 const onClickLeft = () => {
-  if(props.clickLeft) {
+  if (props.clickLeft) {
     props.clickLeft()
     return
   }
   router.back()
 }
 const onClickRight = () => {
-  if(props.clickRight) {
+  if (props.clickRight) {
     props.clickRight()
   }
 }

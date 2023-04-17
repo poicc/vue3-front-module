@@ -1,11 +1,11 @@
 <template>
-    <svg aria-hidden="true">
-      <use :xlink:href="symbolId" :class="fillClass" :fill="color" />
-    </svg>
+  <svg aria-hidden="true">
+    <use :xlink:href="symbolId" :class="fillClass" :fill="color" />
+  </svg>
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed } from 'vue'
 const props = defineProps({
   // 显示的 svg
   name: {
@@ -23,9 +23,7 @@ const props = defineProps({
 })
 
 // 真实显示的svg图标（拼接 #icon-）
-const symbolId =  computed(() => `#icon-${props.name}`)
+const symbolId = computed(() => `#icon-${props.name}`)
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

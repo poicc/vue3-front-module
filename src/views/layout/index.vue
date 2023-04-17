@@ -9,7 +9,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import headerVue from './components/header/index.vue'
 import mainVue from './components/main.vue'
 import floatingVue from './components/floating.vue'

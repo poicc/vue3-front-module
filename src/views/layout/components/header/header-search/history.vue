@@ -44,11 +44,13 @@ const emits = defineEmits([EMITS_ITEM_CLICK])
  * 删除全部
  */
 const onDeleteAllClick = () => {
-  confirm('标题','你要删除所有记录吗？').then(() => {
-    store.commit('search/deleteAllHistory')
-  }).catch(() => {
-    console.log('点击了取消')
-  })
+  confirm('标题', '你要删除所有记录吗？')
+    .then(() => {
+      store.commit('search/deleteAllHistory')
+    })
+    .catch(() => {
+      console.log('点击了取消')
+    })
 }
 /**
  * 单个删除

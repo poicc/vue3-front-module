@@ -95,7 +95,7 @@ const duration = '0.5s'
  * 取消按钮
  */
 const onCancelClick = () => {
-  if(props.cancelHandler) {
+  if (props.cancelHandler) {
     props.cancelHandler()
   }
   close()
@@ -104,7 +104,7 @@ const onCancelClick = () => {
  * 确定按钮
  */
 const onConfirmClick = () => {
-  if(props.confirmHandler) {
+  if (props.confirmHandler) {
     props.confirmHandler()
   }
   close()
@@ -117,10 +117,10 @@ const close = () => {
   isVisable.value = false
   // 延迟一段时间关闭 等动画执行完之后再去执行close()
   setTimeout(() => {
-    if(props.close) {
+    if (props.close) {
       props.close()
     }
-  }, parseInt(duration.replace('0.','').replace('s','') * 100))
+  }, parseInt(duration.replace('0.', '').replace('s', '') * 100))
 }
 </script>
 

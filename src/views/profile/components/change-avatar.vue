@@ -129,6 +129,7 @@ const onChangeProfile = async (avatar) => {
   })
   // 更新服务器数据
   await putProfile(store.getters.userInfo)
+
   // 通知用户
   message('success', '用户头像修改成功')
   // 关闭 loading

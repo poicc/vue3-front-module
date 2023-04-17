@@ -47,7 +47,7 @@
 import Driver from 'driver.js'
 import 'driver.js/dist/driver.min.css'
 import steps from './steps.js'
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 import { FEEDBACK_URL } from '@/constants'
 
 // 2.初始化

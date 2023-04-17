@@ -31,7 +31,6 @@ import { ref, computed, onMounted, nextTick, watch, onUnmounted } from 'vue'
 import {
   getImgElements,
   getAllImg,
-  onComplateImgs,
   getMinHeightColumn,
   getMinHeight,
   getMaxHeight

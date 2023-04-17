@@ -169,7 +169,7 @@ const router = useRouter()
  * 移动端下 navbar 左侧点击事件
  */
 const onNavbarLeftClick = () => {
-  store.commit('app/changeRouterType','push')
+  store.commit('app/changeRouterType', 'push')
   router.back()
 }
 
@@ -236,6 +236,7 @@ watch(isDialogVisible, (val) => {
 const loading = ref(false)
 const onChangeProfile = async () => {
   loading.value = true
+  userInfo.value.avatar = store.getters.userInfo.avatar
   await putProfile(userInfo.value)
   message('success', '用户信息修改成功')
   store.commit('user/setUserInfo', userInfo.value)

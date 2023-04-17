@@ -42,7 +42,7 @@ import { isMobileTerminal } from '@/utils/flexible'
 import payMenuItemVue from './components/pay-menu-item.vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import { getVipPayList } from '@/api/pay'
 import paymentVue from './components/payment/index.vue'
 

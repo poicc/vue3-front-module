@@ -1,6 +1,10 @@
 <template>
   <div class="w-full guide-search">
-    <m-search v-model="inputValue" @search="onSearchHandler" @clear="onSearchHandler">
+    <m-search
+      v-model="inputValue"
+      @search="onSearchHandler"
+      @clear="onSearchHandler"
+    >
       <template #dropdown>
         <div>
           <!-- 搜索提示 -->
@@ -10,7 +14,10 @@
             @itemClick="onSearchHandler"
           ></hint-vue>
           <!-- 最近搜索 -->
-          <historyVue v-show="!inputValue" @itemClick="onSearchHandler"></historyVue>
+          <historyVue
+            v-show="!inputValue"
+            @itemClick="onSearchHandler"
+          ></historyVue>
           <!-- 推荐主题 -->
           <theme-vue v-show="!inputValue"></theme-vue>
         </div>
@@ -22,8 +29,8 @@
 <script setup>
 import { ref } from 'vue'
 import hintVue from './hint.vue'
-import historyVue from './history.vue';
-import { useStore } from 'vuex';
+import historyVue from './history.vue'
+import { useStore } from 'vuex'
 import themeVue from './theme.vue'
 
 const inputValue = ref('')
@@ -34,7 +41,7 @@ const store = useStore()
  */
 const onSearchHandler = (val) => {
   inputValue.value = val
-  if(val) {
+  if (val) {
     store.commit('search/addHistory', val)
     // 触发 searchText 变化
     store.commit('app/changeSearchText', val)

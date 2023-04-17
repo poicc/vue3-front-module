@@ -19,7 +19,9 @@
           class="w-1.5 h-1.5 mr-1"
           fillClass="fill-zinc-900 dark:fill-zinc-300"
         ></m-svg-icon>
-        <span class="text-zinc-900 text-sm dark:text-zinc-300">{{ item.name }}</span>
+        <span class="text-zinc-900 text-sm dark:text-zinc-300">{{
+          item.name
+        }}</span>
       </div>
     </div>
   </m-popover>
@@ -28,7 +30,7 @@
 <script setup>
 import { computed } from 'vue'
 import { THEME_LIGHT, THEME_DARK, THEME_SYSTEM } from '@/constants'
-import { useStore } from 'vuex';
+import { useStore } from 'vuex'
 const store = useStore()
 
 const themeArr = [
@@ -68,7 +70,7 @@ const onItemClikck = (themeItem) => {
  * 展示图标
  */
 const svgIconName = computed(() => {
-  const findTheme = themeArr.find(item => {
+  const findTheme = themeArr.find((item) => {
     return item.type === store.getters.themeType
   })
 

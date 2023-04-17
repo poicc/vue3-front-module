@@ -69,7 +69,7 @@ onActivated(() => {
 })
 
 const onVipClick = () => {
-  store.commit('app/changeRouterType','push')
+  store.commit('app/changeRouterType', 'push')
   router.push('/member')
 }
 

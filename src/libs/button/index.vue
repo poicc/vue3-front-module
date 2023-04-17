@@ -66,7 +66,6 @@ const sizeEnum = {
 </script>
 
 <script setup>
-import { ref } from 'vue'
 /**
  *  构建type风格可选项和size大小可选项
  *  通过props让开发者控制按钮

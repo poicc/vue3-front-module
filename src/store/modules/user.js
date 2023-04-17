@@ -1,5 +1,5 @@
 import md5 from 'md5'
-import { loginUser, getProfile,registerUser } from '@/api/sys'
+import { loginUser, getProfile, registerUser } from '@/api/sys'
 import { message } from '@/libs'
 import { LOGIN_TYPE_OAUTH_NO_REGISTER_CODE } from '@/constants'
 
@@ -54,6 +54,13 @@ export default {
      */
     async profile(context) {
       const data = await getProfile()
+      if (
+        data.avatar ==
+        'https://m.imooc.com/static/wap/static/common/img/logo-small@2x.png"'
+      ) {
+        data.avatar = 'https://p.ipic.vip/smf4vi.png'
+        data.nickname = '新用户'
+      }
       context.commit('setUserInfo', data)
       message(
         'success',

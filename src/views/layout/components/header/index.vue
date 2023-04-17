@@ -6,7 +6,7 @@
       <img
         v-lazy
         class="h-4 cursor-pointer mr-2 guide-home"
-        src="https://tva1.sinaimg.cn/large/008vxvgGgy1h9evd3v579j30b40b4weh.jpg"
+        src="@/assets/images/logo.png"
         @click="onToHome"
       />
       <header-search-vue></header-search-vue>
@@ -17,7 +17,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import headerSearchVue from './header-search/index.vue'
 import headerThemeVue from './header-theme.vue'
 import headerMyVue from './header-my.vue'

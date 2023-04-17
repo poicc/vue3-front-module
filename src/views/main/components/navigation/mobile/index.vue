@@ -32,7 +32,7 @@
     </ul>
   </div>
   <m-popup v-model="isVisable">
-    <menu-vue @onItemClick="onItemClick()"/>
+    <menu-vue @onItemClick="onItemClick()" />
   </m-popup>
 </template>
 
@@ -40,7 +40,7 @@
 import { ref, onBeforeUpdate, watch } from 'vue'
 import { useScroll } from '@vueuse/core'
 import MenuVue from '@/views/main/components/menu/index.vue'
-import { useStore } from 'vuex';
+import { useStore } from 'vuex'
 
 const store = useStore()
 
@@ -49,7 +49,6 @@ const sliderStyle = ref({
   transform: 'translateX(0px)',
   width: '60px'
 })
-
 
 // 获取所有的 item 元素
 let itemRefs = []
@@ -69,14 +68,17 @@ const ulTarget = ref()
 const { x: ulScrollLeft } = useScroll(ulTarget)
 
 // 监听currentCategoryIndex 监听getters 需要返回一个函数
-watch(() => store.getters.currentCategoryIndex, (val) => {
-  const { left, width } = itemRefs[val].getBoundingClientRect()
-  sliderStyle.value = {
-    // 滑块的位置 = ul 横向滚动的位置 + 当前元素的left - ul的padding
-    transform: `translateX(${ulScrollLeft.value + left - 10}px)`,
-    width: width + 'px'
+watch(
+  () => store.getters.currentCategoryIndex,
+  (val) => {
+    const { left, width } = itemRefs[val].getBoundingClientRect()
+    sliderStyle.value = {
+      // 滑块的位置 = ul 横向滚动的位置 + 当前元素的left - ul的padding
+      transform: `translateX(${ulScrollLeft.value + left - 10}px)`,
+      width: width + 'px'
+    }
   }
-})
+)
 
 const onItemClick = (item) => {
   store.commit('app/changeCurrentCategory', item)

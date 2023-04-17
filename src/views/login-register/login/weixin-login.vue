@@ -7,15 +7,14 @@
 
 <script setup>
 import { getWXLoginData, getWXLoginToken, getWXLoginUserInfo } from '@/api/sys'
-import brodacast from './brodacast';
+import brodacast from './brodacast'
 import { oauthLogin } from './oauth'
 import { LOGIN_TYPE_WX } from '@/constants'
-
 
 /**
  * 微信登录成功之后的窗口数据解析
  */
- if (window.location.search) {
+if (window.location.search) {
   const code = /code=((.*))&state/.exec(window.location.search)[1]
   if (code) {
     brodacast.send({
@@ -65,7 +64,6 @@ const onWeiXinLogin = async () => {
       headimgurl
     })
   })
-
 }
 </script>
 
