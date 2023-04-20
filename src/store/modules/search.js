@@ -1,4 +1,3 @@
-
 /**
  * 搜索
  */
@@ -16,12 +15,12 @@ export default {
      * 新增
      * 新增历史位于头部 不可出现重复记录
      */
-    addHistory (state, newHistory) {
+    addHistory(state, newHistory) {
       const isFindIndex = state.historys.findIndex(
         (item) => item === newHistory
       )
       // 剔除旧数据
-      if(isFindIndex !== -1) {
+      if (isFindIndex !== -1) {
         state.historys.splice(isFindIndex, 1)
       }
       // 新增数据

@@ -54,7 +54,7 @@ export const putProfile = (data) => {
   })
 }
 
-/** 
+/**
  * 获取 OSS 上传凭证
  */
 export const getSts = () => {
@@ -62,7 +62,6 @@ export const getSts = () => {
     url: '/user/sts'
   })
 }
-
 
 /**
  * 微信登录前置数据获取

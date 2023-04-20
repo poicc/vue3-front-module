@@ -11,19 +11,19 @@ export const getImgElements = (itemElements) => {
 
 /**
  * 获取所有img标签的图片
- * @param {*} imgElements 
- * @returns 
+ * @param {*} imgElements
+ * @returns
  */
 export const getAllImg = (imgElements) => {
-  return imgElements.map(imgElement => {
+  return imgElements.map((imgElement) => {
     return imgElement.src
   })
 }
 
 /**
  * 监听所有的图片加载情况
- * @param {*} imgs 
- * @returns 
+ * @param {*} imgs
+ * @returns
  */
 export const onComplateImgs = (imgs) => {
   // promise集合

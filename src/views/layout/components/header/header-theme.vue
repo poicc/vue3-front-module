@@ -1,11 +1,11 @@
 <template>
-  <m-popover placement="bottom-left">
+  <poi-popover placement="bottom-left">
     <template #reference>
-      <m-svg-icon
+      <poi-svg-icon
         :name="svgIconName"
         class="guide-theme w-4 h-4 p-1 cursor-pointer rounded-sm duration-200 outline-none hover:bg-zinc-100/60 dark:hover:bg-zinc-900"
         fillClass="fill-zinc-900 dark:fill-zinc-300"
-      ></m-svg-icon>
+      ></poi-svg-icon>
     </template>
     <div class="w-[140px] overflow-hidden">
       <div
@@ -14,17 +14,17 @@
         :key="item.id"
         @click="onItemClikck(item)"
       >
-        <m-svg-icon
+        <poi-svg-icon
           :name="item.icon"
           class="w-1.5 h-1.5 mr-1"
           fillClass="fill-zinc-900 dark:fill-zinc-300"
-        ></m-svg-icon>
+        ></poi-svg-icon>
         <span class="text-zinc-900 text-sm dark:text-zinc-300">{{
           item.name
         }}</span>
       </div>
     </div>
-  </m-popover>
+  </poi-popover>
 </template>
 
 <script setup>

@@ -2,7 +2,7 @@ import { h, render } from 'vue'
 import messageComponent from './index.vue'
 
 /**
- * 
+ *
  * @param {*} type 类型
  * @param {*} content 文本
  * @param {*} duration 展示时间

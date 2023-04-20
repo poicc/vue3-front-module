@@ -15,7 +15,7 @@
         @click="onShowPopup"
         class="fixed top-0 right-[-1px] h-4 px-1 flex items-center bg-white dark:bg-zinc-900 z-20 shadow-l-white dark:shadow-l-zinc"
       >
-        <m-svg-icon name="hamburger" class="w-1.5 h-1.5"></m-svg-icon>
+        <poi-svg-icon name="hamburger" class="w-1.5 h-1.5"></poi-svg-icon>
       </li>
       <li
         v-for="(item, index) in $store.getters.categorys"
@@ -31,9 +31,9 @@
       </li>
     </ul>
   </div>
-  <m-popup v-model="isVisable">
+  <poi-popup v-model="isVisable">
     <menu-vue @onItemClick="onItemClick()" />
-  </m-popup>
+  </poi-popup>
 </template>
 
 <script setup>

@@ -1,11 +1,11 @@
 const config = {
-  title: "SSY-UI",
+  title: "POICC-MODULE",
   description: "组件库搭建文档",
   themeConfig: {
     logo: '/logo.png',
-    siteTitle: 'SSY-UI-VITE',
+    siteTitle: 'POICC-MODULE',
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/mqxu/ssy-ui-vite' }
+      { icon: 'github', link: 'https://github.com/poicc/vue3-front-module' }
     ],
     sidebar: [
       {

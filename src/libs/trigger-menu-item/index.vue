@@ -3,8 +3,8 @@
     class="w-5 flex flex-col items-center justify-center mx-0.5"
     @click="onItemClick"
   >
-    <m-svg-icon :name="icon" :fillClas="iconClass" class="w-2 h-2">
-    </m-svg-icon>
+    <poi-svg-icon :name="icon" :fillClas="iconClass" class="w-2 h-2">
+    </poi-svg-icon>
     <p class="text-sm mt-0.5" :class="textClass">
       <slot />
     </p>

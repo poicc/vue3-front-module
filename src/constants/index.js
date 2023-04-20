@@ -28,7 +28,7 @@ export const CATEGORY_NOMAR_DATA = [
   },
   { id: 'architecture', name: '建筑设计', urlname: 'architecture' },
   { id: 'art', name: '人文艺术', urlname: 'art' },
-  { id: 'home', name: '家居/家装', col: 1, urlname: 'home' },
+  { id: 'home', name: '家居/家装', col: 1, urlname: 'home' }
 ]
 // 极简白
 export const THEME_LIGHT = 'THEME_LIGHT'

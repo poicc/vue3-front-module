@@ -3,26 +3,26 @@
     class="fixed top-0 left-0 w-screen h-screen text-xl bg-white dark:bg-zinc-800 z-20 backdrop-blur-4xl xl:bg-transparent pb-2 overflow-y-auto xl:p-2"
   >
     <!-- 移动端下的 navbar -->
-    <m-navbar v-if="isMobileTerminal" sticky>
+    <poi-navbar v-if="isMobileTerminal" sticky>
       {{ pexelData.title }}
 
       <template #right>
-        <m-svg-icon
+        <poi-svg-icon
           name="share"
           class="w-3 h-3"
           fillClass="fill-zinc-900 dark:fill-zinc-200"
-        ></m-svg-icon>
+        ></poi-svg-icon>
       </template>
-    </m-navbar>
+    </poi-navbar>
 
     <!-- pc端下的navbar -->
-    <m-svg-icon
+    <poi-svg-icon
       v-else
       name="close"
       class="w-3 h-3 ml-1 p-0.5 cursor-pointer duration-200 rounded-sm hover:bg-zinc-100 absolute right-2 top-2"
       fillClass="fill-zinc-400"
       @click="onPop"
-    ></m-svg-icon>
+    ></poi-svg-icon>
 
     <!-- 内容区 -->
     <div
@@ -40,16 +40,16 @@
         <!-- pc:收藏、分享 -->
         <div v-if="!isMobileTerminal" class="flex justify-between mb-2">
           <!-- 分享  -->
-          <m-svg-icon
+          <poi-svg-icon
             name="share"
             class="w-4 h-4 p-1 cursor-pointer hover:bg-zinc-200 dark:hover-zinc-800 duration-300 rounded"
-          ></m-svg-icon>
+          ></poi-svg-icon>
           <!-- 收藏 -->
-          <m-button
+          <poi-button
             type="info"
             icon="heart"
             iconClass="fill-zinc-900 dark:fill-zinc-200"
-          ></m-button>
+          ></poi-button>
         </div>
         <!-- 标题  -->
         <p

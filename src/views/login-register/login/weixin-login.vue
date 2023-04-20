@@ -1,6 +1,6 @@
 <template>
   <div @click="onWeiXinLogin">
-    <m-svg-icon class="w-4 cursor-pointer" name="wexin"></m-svg-icon>
+    <poi-svg-icon class="w-4 cursor-pointer" name="wexin"></poi-svg-icon>
     <div id="login_container"></div>
   </div>
 </template>

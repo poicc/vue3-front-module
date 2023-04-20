@@ -14,14 +14,18 @@
         </p>
         <p class="text-red-600">优惠券：限时立减 ￥10</p>
       </div>
-      <m-button class="w-[120px]" :isActiveAnim="false" @click="onConfirmClick">
+      <poi-button
+        class="w-[120px]"
+        :isActiveAnim="false"
+        @click="onConfirmClick"
+      >
         立即开通
-      </m-button>
+      </poi-button>
     </div>
     <!-- TODO: popup -->
-    <m-popup v-model="isOpenPopup" class="rounded">
+    <poi-popup v-model="isOpenPopup" class="rounded">
       <mobile-pay-select-vue :payData="payData"></mobile-pay-select-vue>
-    </m-popup>
+    </poi-popup>
   </div>
 </template>
 

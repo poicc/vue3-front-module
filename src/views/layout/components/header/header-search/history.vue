@@ -2,12 +2,12 @@
   <div>
     <div class="flex items-center text-xs mb-1 text-zinc-400">
       <span> 最新搜索</span>
-      <m-svg-icon
+      <poi-svg-icon
         name="delete"
         class="w-2.5 h-2.5 ml-1 p-0.5 cursor-pointer duration-300 rounded-sm hover:bg-zinc-400"
         fillClass="fill-zinc-400"
         @click="onDeleteAllClick"
-      ></m-svg-icon>
+      ></poi-svg-icon>
     </div>
 
     <div class="flex flex-wrap">
@@ -18,11 +18,11 @@
         @click="onItemClick(item)"
       >
         <span>{{ item }}</span>
-        <m-svg-icon
+        <poi-svg-icon
           name="input-delete"
           class="w-2.5 h-2.5 p-0.5 ml-1 duration-300 rounded-sm hover:bg-zinc-100"
           @click.stop="onDeleteClick(index)"
-        ></m-svg-icon>
+        ></poi-svg-icon>
       </div>
     </div>
   </div>

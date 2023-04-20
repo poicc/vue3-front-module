@@ -1,11 +1,11 @@
 <template>
   <div>
-    <m-infinite
+    <poi-infinite
       v-model="loading"
       :isFinished="isFinished"
       @onLoad="getPexlesData"
     >
-      <m-waterfull
+      <poi-waterfull
         class="px-1 w-full"
         :data="pexlesList"
         :column="isMobileTerminal ? 2 : 5"
@@ -14,8 +14,8 @@
         <template v-slot="{ item, width }">
           <item-vue :data="item" :width="width" @click="onToPins"></item-vue>
         </template>
-      </m-waterfull>
-    </m-infinite>
+      </poi-waterfull>
+    </poi-infinite>
 
     <!-- 详情内容展示  -->
     <transition

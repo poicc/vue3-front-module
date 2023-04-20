@@ -9,11 +9,11 @@
       @click="onClickLeft"
     >
       <slot name="left">
-        <m-svg-icon
+        <poi-svg-icon
           name="back"
           class="w-2 h-2"
           fillClass="fill-zinc-900 dark:fill-zinc-200"
-        ></m-svg-icon>
+        ></poi-svg-icon>
       </slot>
     </div>
     <!-- 中 -->

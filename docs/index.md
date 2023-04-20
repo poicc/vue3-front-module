@@ -2,19 +2,19 @@
 layout: home
 
 hero:
-  name: SSY-UI-VITE
+  name: POICC-MODULE
   text: 组件库文档
   tagline: poicc
   image:
     src: /logo.png
-    alt: ssy-ui-vite
+    alt: poicc-module
   actions:
     - theme: brand
       text: Get Started
       link: /guides/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/poicc/ssy-ui-vite
+      link: https://github.com/poicc/vue3-front-module
 
 features:
   - icon: ⚡️

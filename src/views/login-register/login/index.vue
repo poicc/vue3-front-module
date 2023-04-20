@@ -54,11 +54,11 @@
         </div>
 
         <!-- 登录按钮 -->
-        <m-button
+        <poi-button
           class="w-full dark:bg-zinc-900 xl:dark:bg-zinc-800"
           :isActiveAnim="false"
           :loading="loading"
-          >登录</m-button
+          >登录</poi-button
         >
 
         <!-- 第三方登录 -->

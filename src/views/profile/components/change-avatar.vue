@@ -1,22 +1,22 @@
 <template>
   <div class="overflow-auto relative flex flex-col items-center">
-    <m-svg-icon
+    <poi-svg-icon
       v-if="isMobileTerminal"
       name="close"
-      class="w-3 h-3 p-0.5 m-1 ml-auto"
+      class="w-3 h-3 p-0.5 poi-1 ml-auto"
       fillClass="fill-zinc-900 dark:fill-zinc-200 "
       @click="close"
-    ></m-svg-icon>
+    ></poi-svg-icon>
 
     <img class="" ref="imageTarget" :src="blob" />
 
-    <m-button
+    <poi-button
       class="mt-4 w-[80%] xl:w-1/2"
       :loading="loading"
       @click="onConfirmClick"
     >
       确定
-    </m-button>
+    </poi-button>
   </div>
 </template>
 

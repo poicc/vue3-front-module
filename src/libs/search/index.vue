@@ -5,11 +5,11 @@
   >
     <div>
       <!-- 搜索图标 -->
-      <m-svg-icon
+      <poi-svg-icon
         class="w-1.5 h-1.5 absolute translate-y-[-50%] top-[50%] left-2"
         name="search"
         color="#707070"
-      ></m-svg-icon>
+      ></poi-svg-icon>
       <!-- 输入框 -->
       <input
         class="block w-full h-[44px] pl-4 outline-0 bg-zinc-100 dark:bg-zinc-800 caret-zinc-400 rounded-xl text-sm text-zinc-900 dark:text-zinc-200 tracking-wide duration-500 font-semibold border border-zinc-100 dark:border-zinc-700 focus:border-red-300 group-hover:bg-white dark:group-hover:bg-zinc-900 group-hover:border-zinc-200 dark:group-hover:border-zinc-700"
@@ -20,23 +20,23 @@
         @blur="onBlurHandler"
       />
       <!-- 删除按钮 -->
-      <m-svg-icon
+      <poi-svg-icon
         v-show="inputValue"
         @click="onClearClick"
         name="input-delete"
         class="h-1.5 w-1.5 absolute translate-y-[-50%] top-[50%] right-9 cursor-pointer duration-500"
-      ></m-svg-icon>
+      ></poi-svg-icon>
       <!-- 分割线 -->
       <div
         class="opacity-0 h-1.5 w-[1px] absolute translate-y-[-50%] top-[50%] right-[62px] duration-500 bg-zinc-200 group-hover:opacity-100"
       ></div>
       <!-- 搜索按钮 -->
-      <m-button
+      <poi-button
         @click="onSearchHandler"
         class="opacity-0 absolute translate-y-[-50%] top-[50%] right-1 rounded-full duration-500 group-hover:opacity-100"
         icon="search"
         iconColor="#fff"
-      ></m-button>
+      ></poi-button>
     </div>
     <!-- 下拉区 -->
     <transition name="slide">

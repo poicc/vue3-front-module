@@ -5,11 +5,11 @@
       class="min-w-[420px] fixed top-[20px] left-[50%] translate-x-[-50%] z-50 flex items-center px-3 py-1.5 rounded-sm border cursor-pointer"
       :class="styles[type].containerClass"
     >
-      <m-svg-icon
+      <poi-svg-icon
         :name="styles[type].icon"
         :fillClass="styles[type].fillClass"
         class="h-1.5 w-1.5 mr-1.5"
-      ></m-svg-icon>
+      ></poi-svg-icon>
       <span class="text-sm" :class="styles[type].textClass">
         {{ content }}
       </span>

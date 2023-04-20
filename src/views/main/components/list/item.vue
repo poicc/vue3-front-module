@@ -21,32 +21,32 @@
         class="hidden opacity-0 w-full h-full bg-zinc-900/50 absolute top-0 left-0 rounded duration-300 group-hover:opacity-100 xl:block"
       >
         <!-- 分享 -->
-        <m-button class="absolute top-1.5 left-1.5" @click="onShareClick"
-          >分享</m-button
+        <poi-button class="absolute top-1.5 left-1.5" @click="onShareClick"
+          >分享</poi-button
         >
         <!-- 点赞 -->
-        <m-button
+        <poi-button
           class="absolute top-1.5 right-1.5"
           type="info"
           icon="heart"
           iconClass=" fill-zinc-900 dark:fill-zinc-200"
-        ></m-button>
+        ></poi-button>
         <!-- 下载 -->
-        <m-button
+        <poi-button
           class="absolute bottom-1.5 left-1.5 bg-zinc-100/70"
           type="info"
           icon="download"
           iconClass=" fill-zinc-900 dark:fill-zinc-200"
           @click="onDownload"
-        ></m-button>
+        ></poi-button>
         <!-- 全屏 -->
-        <m-button
+        <poi-button
           class="absolute bottom-1.5 right-1.5 bg-zinc-100/70"
           type="info"
           icon="full"
           iconClass=" fill-zinc-900 dark:fill-zinc-200"
           @click="onImgFullScreen"
-        ></m-button>
+        ></poi-button>
       </div>
     </div>
     <!-- 标题 -->

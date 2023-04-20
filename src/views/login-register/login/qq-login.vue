@@ -1,11 +1,11 @@
 <template>
   <div>
     <span id="qqLoginBtn" v-show="false"></span>
-    <m-svg-icon
+    <poi-svg-icon
       class="w-4 cursor-pointer"
       name="qq"
       @click="onQQLogin"
-    ></m-svg-icon>
+    ></poi-svg-icon>
   </div>
 </template>
 

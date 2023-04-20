@@ -5,18 +5,18 @@
     <!-- 头 -->
     <div class="flex items-center h-5 text-left px-1 mb-1">
       <span class="flex-grow dark:text-zinc-200">请完成安全验证</span>
-      <m-svg-icon
+      <poi-svg-icon
         name="refresh"
         fillClass="fill-zinc-900 dark:fill-zinc-200"
         class="w-3 h-3 p-0.5 rounded-sm duration-300 cursor-pointer hover:bg-zinc-200 dark:hover:bg-zinc-900"
         @click="onReset"
-      ></m-svg-icon>
-      <m-svg-icon
+      ></poi-svg-icon>
+      <poi-svg-icon
         name="close"
         fillClass="fill-zinc-900 dark:fill-zinc-200"
         class="ml-2 w-3 h-3 p-0.5 rounded-sm duration-300 cursor-pointer hover:bg-zinc-200 dark:hover:bg-zinc-900"
         @click="onClose"
-      ></m-svg-icon>
+      ></poi-svg-icon>
     </div>
     <!-- captcha -->
     <div id="captcha"></div>

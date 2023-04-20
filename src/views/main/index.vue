@@ -9,31 +9,31 @@
     </div>
 
     <!-- 移动端下的 tabbar -->
-    <m-trigger-menu
+    <poi-trigger-menu
       v-if="isMobileTerminal"
       class="fixed bottom-6 m-auto left-0 right-0 w-[220px]"
     >
-      <m-trigger-menu-item
+      <poi-trigger-menu-item
         icon="home"
         iconClass="fill-zinc-900 dark:fill-zinc-200"
-        >首页</m-trigger-menu-item
+        >首页</poi-trigger-menu-item
       >
-      <m-trigger-menu-item
+      <poi-trigger-menu-item
         v-if="$store.getters.token"
         icon="vip"
         iconClass="fill-zinc-900 dark:fill-zinc-200"
         textClass="text-zinc-400 dark:text-zinc-500"
         @click="onVipClick"
-        >VIP</m-trigger-menu-item
+        >VIP</poi-trigger-menu-item
       >
-      <m-trigger-menu-item
+      <poi-trigger-menu-item
         icon="profile"
         iconClass="fill-zinc-900 dark:fill-zinc-200"
         textClass="text-zinc-400 dark:text-zinc-500"
         @click="onMyClick"
-        >{{ $store.getters.token ? '我的' : '去登录' }}</m-trigger-menu-item
+        >{{ $store.getters.token ? '我的' : '去登录' }}</poi-trigger-menu-item
       >
-    </m-trigger-menu>
+    </poi-trigger-menu>
   </div>
 </template>
 

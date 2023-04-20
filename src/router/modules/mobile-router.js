@@ -7,17 +7,17 @@ export default [
   {
     path: '/pins/:id',
     name: 'pins',
-    component:() => import('@/views/pins/index.vue'),
+    component: () => import('@/views/pins/index.vue')
   },
   {
     path: '/login',
     name: 'login',
-    component:() => import('@/views/login-register/login/index.vue'),
+    component: () => import('@/views/login-register/login/index.vue')
   },
   {
     path: '/register',
     name: 'register',
-    component:() => import('@/views/login-register/register/index.vue'),
+    component: () => import('@/views/login-register/register/index.vue')
   },
   {
     path: '/profile',
@@ -44,5 +44,5 @@ export default [
     meta: {
       user: true
     }
-  },
+  }
 ]

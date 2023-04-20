@@ -9,11 +9,11 @@
         class="absolute right-1 bottom-1 z-20 p-1 rounded cursor-pointer duration-200 hover:bg-zinc-200 dark:hover:bg-zinc-900"
         @click="triggerState"
       >
-        <m-svg-icon
+        <poi-svg-icon
           :name="isOpenCategory ? 'fold' : 'unfold'"
           class="w-1 h-1"
           fillClass="fill-zinc-900 dark:fill-zinc-300"
-        ></m-svg-icon>
+        ></poi-svg-icon>
       </div>
       <!-- item -->
       <li

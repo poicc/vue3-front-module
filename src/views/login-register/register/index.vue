@@ -82,13 +82,13 @@
           </div>
         </div>
 
-        <m-button
+        <poi-button
           class="w-full dark:bg-zinc-900 xl:dark:bg-zinc-800"
           :isActiveAnim="false"
           :loading="loading"
         >
           立即注册
-        </m-button>
+        </poi-button>
       </vee-form>
     </div>
   </div>

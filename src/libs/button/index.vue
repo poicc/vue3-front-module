@@ -11,20 +11,20 @@
     @click.stop="onBtnClick"
   >
     <!-- loading按钮 -->
-    <m-svg-icon
+    <poi-svg-icon
       v-if="loading"
       name="loading"
       class="w-2 h-2 animate-spin mr-1"
-    ></m-svg-icon>
+    ></poi-svg-icon>
     <!-- icon按钮 -->
-    <m-svg-icon
+    <poi-svg-icon
       v-if="icon"
       :name="icon"
       class="m-auto"
       :class="sizeEnum[sizeKey].icon"
       :color="iconColor"
       :fillClass="iconClass"
-    ></m-svg-icon>
+    ></poi-svg-icon>
     <!-- 文字按钮 -->
     <slot v-else />
   </button>
@@ -32,7 +32,7 @@
 
 <script>
 import { computed } from 'vue'
-import mSvgIcon from '../svg-icon/index.vue'
+import PoiSvgIcon from '../svg-icon/index.vue'
 
 const EMITS_CLICK = 'click'
 // type按钮风格可选项

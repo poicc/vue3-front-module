@@ -24,12 +24,12 @@
         </div>
         <!-- 按钮 -->
         <div class="flex justify-end">
-          <m-button type="info" class="mr-2" @click="onCancelClick">{{
+          <poi-button type="info" class="mr-2" @click="onCancelClick">{{
             cancelText
-          }}</m-button>
-          <m-button type="primary" @click="onConfirmClick">{{
+          }}</poi-button>
+          <poi-button type="primary" @click="onConfirmClick">{{
             confirmText
-          }}</m-button>
+          }}</poi-button>
         </div>
       </div>
     </transition>
@@ -39,7 +39,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 // 在方法调用的组件中，需要主动导入组件
-import mButton from '../button/index.vue'
+import PoiButton from '../button/index.vue'
 const props = defineProps({
   // 标题
   title: {

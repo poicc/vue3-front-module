@@ -1,4 +1,4 @@
-# SSY-UI-VITE 是什么?
+# POICC-MODULE 是什么?
 > 一个Mini自制组件库，基于Vite技术栈，为学习前端工程化搭建的组件库。
 
 # Features

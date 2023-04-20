@@ -19,15 +19,12 @@ module.exports =   {
     'eslint:recommended',
     '@vue/prettier'
   ],
-  plugins: ['@typescript-eslint'],
-  parserOptions: {
-    parser: '@typescript-eslint/parser' // 解析 .ts 文件
-  },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'prettier/prettier': 'error',
     'vue/multi-word-component-names':'off',
-    'no-undef': 'off'
+    'no-undef': 'off',
+    'no-unused-vars': 'off'
   }
 }

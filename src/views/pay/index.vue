@@ -7,25 +7,25 @@
         v-if="JSON.stringify(isSuccess) !== 'null'"
         class="flex justify-center items-center"
       >
-        <m-svg-icon
+        <poi-svg-icon
           v-if="isSuccess"
           name="pay-success"
           class="w-8 h-8 mr-4"
-        ></m-svg-icon>
-        <m-svg-icon
+        ></poi-svg-icon>
+        <poi-svg-icon
           v-if="!isSuccess"
           name="pay-fail"
           class="w-8 h-8 mr-4"
-        ></m-svg-icon>
+        ></poi-svg-icon>
         <p class="text-ml text-zinc-900 dark:text-zinc-200">
           {{ isSuccess ? '支付成功' : '支付失败' }}
         </p>
       </div>
 
-      <m-button
+      <poi-button
         class="w-full mt-8 mx-auto dark:bg-zinc-800 xl:w-[120px]"
         @click="onConfirm"
-        >确定</m-button
+        >确定</poi-button
       >
     </div>
   </div>

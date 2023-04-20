@@ -1,6 +1,6 @@
 <template>
   <div class="w-full guide-search">
-    <m-search
+    <poi-search
       v-model="inputValue"
       @search="onSearchHandler"
       @clear="onSearchHandler"
@@ -22,7 +22,7 @@
           <theme-vue v-show="!inputValue"></theme-vue>
         </div>
       </template>
-    </m-search>
+    </poi-search>
   </div>
 </template>
 
