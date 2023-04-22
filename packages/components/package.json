@@ -1,0 +1,46 @@
+{
+    "name": "poicc-components",
+    "version": "1.0.0",
+    "main": "lib/index.js",
+    "module": "es/index.js",
+    "description": "基于 vue3 的前台组件库",
+    "author": "poicc",
+    "files": [
+        "es",
+        "lib"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "scripts": {
+        "build": "vite build",
+        "test": "vitest",
+        "test:run": "vitest run"
+    },
+    "keywords": [],
+    "license": "ISC",
+    "typings": "lib/index.d.ts",
+    "dependencies": {
+        "@vue/test-utils": "^2.2.6",
+        "codecov": "^3.8.3",
+        "@poicc-ui/utils": "workspace:^1.0.0",
+        "autoprefixer": "^10.4.2",
+        "postcss": "^8.4.8",
+        "prettier": "^2.8.1",
+        "tailwindcss": "^3.0.23",
+        "@vueuse/core": "^9.6.0",
+        "@vueuse/shared": "^10.0.2",
+        "dayjs": "^1.11.7",
+        "vue-router": "^4.0.14"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^3.2.0",
+        "@vitest/ui": "^0.14.2",
+        "happy-dom": "^4.1.0",
+        "sass": "^1.45.0",
+        "tailwind-scrollbar": "^2.1.0",
+        "vite-plugin-svg-icons": "^2.0.1",
+        "vitest": "^0.14.2"
+    }
+}

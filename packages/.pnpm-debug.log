@@ -1,0 +1,24 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": "/Users/chenrongqi/Downloads/Metrix-UIStarter-main"
+  },
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "not found: docs:dev",
+      "code": "ENOENT",
+      "stack": "Error: not found: docs:dev\n    at getNotFoundError (/opt/homebrew/Cellar/pnpm/7.1.9/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:41714:51)\n    at Function.whichSync [as sync] (/opt/homebrew/Cellar/pnpm/7.1.9/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:41791:13)\n    at getCommandAbsolutePathSync (/opt/homebrew/Cellar/pnpm/7.1.9/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:43356:44)\n    at default_1 (/opt/homebrew/Cellar/pnpm/7.1.9/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:43365:32)\n    at /opt/homebrew/Cellar/pnpm/7.1.9/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:178485:39"
+    }
+  },
+  "2 error pnpm": {
+    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+    "prefix": "/Users/chenrongqi/Downloads/Metrix-UIStarter-main",
+    "err": {
+      "name": "pnpm",
+      "message": "not found: docs:dev",
+      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+      "stack": "Error: not found: docs:dev\n    at getNotFoundError (/opt/homebrew/Cellar/pnpm/7.1.9/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:41714:51)\n    at Function.whichSync [as sync] (/opt/homebrew/Cellar/pnpm/7.1.9/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:41791:13)\n    at getCommandAbsolutePathSync (/opt/homebrew/Cellar/pnpm/7.1.9/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:43356:44)\n    at default_1 (/opt/homebrew/Cellar/pnpm/7.1.9/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:43365:32)\n    at /opt/homebrew/Cellar/pnpm/7.1.9/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:178485:39"
+    }
+  }
+}

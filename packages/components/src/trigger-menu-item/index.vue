@@ -1,0 +1,44 @@
+<template>
+  <div
+    class="w-5 flex flex-col items-center justify-center mx-0.5"
+    @click="onItemClick"
+  >
+    <PoiSvgIcon :name="icon" :fillClas="iconClass" class="w-2 h-2">
+    </PoiSvgIcon>
+    <p class="text-sm mt-0.5" :class="textClass">
+      <slot />
+    </p>
+  </div>
+</template>
+
+<script setup>
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import PoiSvgIcon from '../svg-icon/index.vue'
+import { useRouter } from 'vue-router'
+const props = defineProps({
+  icon: {
+    type: String,
+    required: true
+  },
+  iconClass: {
+    type: String
+  },
+  textClass: {
+    type: String,
+    default: 'text-zinc-900'
+  },
+  to: {
+    type: String
+  }
+})
+
+const router = useRouter()
+const onItemClick = () => {
+  if (!props.to) {
+    return
+  }
+  router.push(props.to)
+}
+</script>
+
+<style lang="scss" scoped></style>

@@ -1,0 +1,7 @@
+{
+    "./*.{js,jsx,ts,tsx}": [
+        "prettier --write .",
+        "eslint  --fix, stylelint --fix --allow-empty-input"
+    ],
+    "*.md": ["prettier --write"]
+}

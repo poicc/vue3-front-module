@@ -1,9 +1,2 @@
-*.sh
-node_modules
-lib
-coverage
-*.md
-*.scss
-*.woff
-*.ttf
-dist
+packages/components/es/*
+packages/components/lib/*

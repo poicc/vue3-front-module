@@ -1,83 +1,54 @@
 {
-  "name": "poicc-module",
-  "private": true,
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "build:MyComponent": "resno ./scripts/build.js",
-    "preview": "vite preview",
-    "test": "vitest",
-    "test:run": "vitest run",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs",
-    "lint": "eslint --fix --ext .js,.vue src",
-    "format": "prettier --write \"src/**/*.js\" \"src/**/*.vue\"",
-    "prepare": "husky install",
-    "register:components": "vitepress-rc",
-    "coverage": "vitest run --coverage"
-  },
-  "dependencies": {
-    "@commitlint/cli": "17.0.2",
-    "@commitlint/config-conventional": "17.0.2",
-    "@vue/eslint-config-prettier": "^7.0.0",
-    "@vue/test-utils": "^2.2.6",
-    "@vueuse/core": "^9.6.0",
-    "@vueuse/shared": "^10.0.2",
-    "ali-oss": "^6.17.0",
-    "autoprefixer": "^10.4.2",
-    "axios": "^0.26.1",
-    "babel-eslint": "^10.1.0",
-    "codecov": "^3.8.3",
-    "cropperjs": "^1.5.12",
-    "dayjs": "^1.11.7",
-    "driver.js": "^0.9.8",
-    "eslint": "^8.29.0",
-    "eslint-formatter-pretty": "^4.1.0",
-    "eslint-plugin-json": "^3.1.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^8.7.1",
-    "file-saver": "^2.0.5",
-    "gsap": "^3.9.1",
-    "md5": "^2.3.0",
-    "postcss": "^8.4.8",
-    "prettier": "^2.8.1",
-    "tailwindcss": "^3.0.23",
-    "terser": "^5.16.1",
-    "vee-validate": "^4.7.4",
-    "vue": "^3.2.41",
-    "vue-router": "^4.0.14",
-    "vuex": "^4.0.2",
-    "vuex-persistedstate": "^4.1.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^3.2.0",
-    "@vitest/ui": "^0.14.2",
-    "c8": "^7.12.0",
-    "cz-customizable": "^7.0.0",
-    "happy-dom": "^4.1.0",
-    "husky": "^8.0.3",
-    "sass": "^1.45.0",
-    "tailwind-scrollbar": "^2.1.0",
-    "vite": "^3.2.3",
-    "vite-plugin-svg-icons": "^2.0.1",
-    "vitepress": "0.22.4",
-    "vitepress-theme-demoblock": "^2.0.2",
-    "vitest": "^0.14.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
+    "name": "poicc-ui",
+    "version": "1.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "eslint": "eslint --ext .js,.vue,.ts --fix .",
+        "prettier": "prettier --write ./*.{ts,tsx,js,jsx,css,less,scss,json,md}",
+        "stylelint": "stylelint ./*.{scss,css} --fix --allow-empty-input",
+        "prepare": "husky install",
+        "commit": "git add . && git-cz",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+        "release": "standard-version"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@commitlint/config-conventional": "^17.4.2",
+        "@typescript-eslint/eslint-plugin": "^5.48.1",
+        "@typescript-eslint/parser": "^5.48.1",
+        "@vitejs/plugin-vue": "^4.0.0",
+        "commitizen": "^4.2.6",
+        "commitlint": "^17.4.2",
+        "commitlint-config-cz": "^0.13.3",
+        "conventional-changelog-cli": "^2.2.2",
+        "cz-conventional-changelog": "^3.3.0",
+        "cz-customizable": "^7.0.0",
+        "eslint": "^8.31.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-vue": "^9.9.0",
+        "husky": "^8.0.3",
+        "prettier": "^2.8.3",
+        "standard-version": "^9.5.0",
+        "stylelint": "^14.16.1",
+        "stylelint-config-standard": "^29.0.0",
+        "stylelint-order": "^6.0.1",
+        "stylelint-scss": "^4.3.0",
+        "typescript": "^4.9.4",
+        "vite": "^4.0.4",
+        "vite-plugin-dts": "^1.7.1",
+        "vue": "^3.2.36"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-customizable"
+        }
+    },
+    "dependencies": {
+        "eslint-plugin-disable": "^2.0.3"
     }
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "@types/node",
-        "typescript"
-      ]
-    }
-  }
 }
