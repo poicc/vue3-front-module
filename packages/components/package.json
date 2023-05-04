@@ -22,25 +22,26 @@
     "license": "ISC",
     "typings": "lib/index.d.ts",
     "dependencies": {
-        "@vue/test-utils": "^2.2.6",
-        "codecov": "^3.8.3",
         "@poicc-ui/utils": "workspace:^1.0.0",
+        "@vueuse/core": "^9.6.0",
+        "@vueuse/shared": "^10.0.2",
         "autoprefixer": "^10.4.2",
+        "codecov": "^3.8.3",
+        "dayjs": "^1.11.7",
         "postcss": "^8.4.8",
         "prettier": "^2.8.1",
         "tailwindcss": "^3.0.23",
-        "@vueuse/core": "^9.6.0",
-        "@vueuse/shared": "^10.0.2",
-        "dayjs": "^1.11.7",
         "vue-router": "^4.0.14"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^3.2.0",
         "@vitest/ui": "^0.14.2",
-        "happy-dom": "^4.1.0",
+        "@vue/test-utils": "2.3.2",
+        "happy-dom": "^6.0.4",
+        "jest": "^29.5.0",
         "sass": "^1.45.0",
         "tailwind-scrollbar": "^2.1.0",
         "vite-plugin-svg-icons": "^2.0.1",
-        "vitest": "^0.14.2"
+        "vitest": "^0.21.1"
     }
 }
