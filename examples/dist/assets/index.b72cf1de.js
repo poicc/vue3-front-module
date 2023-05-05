@@ -1,0 +1,1 @@
+import{_ as o}from"./pins.47c2034b.js";import{o as r,c as t,g as a}from"./index.8e9cc30a.js";import"./index.vue.b7077a39.js";import"./index.vue.5c1df093.js";import"./pexels.ae930d4f.js";const i={class:"w-full h-full bg-zinc-200 dark:bg-zinc-800"},d={__name:"index",setup(s){return(e,c)=>(r(),t("div",i,[a(o,{id:e.$route.params.id},null,8,["id"])]))}};export{d as default};

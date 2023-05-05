@@ -1,6 +1,6 @@
 import { ref, watch, onUnmounted, computed, openBlock, createElementBlock, renderSlot, createElementVNode, toDisplayString, unref } from "vue";
 import "./utils.js";
-import dayjs from "../node_modules/.pnpm/registry.npmmirror.com_dayjs@1.11.7/node_modules/dayjs/dayjs.min.js";
+import dayjs from "../_virtual/dayjs.min.js";
 const _hoisted_1 = { class: "text-sm" };
 const EMITS_FINISH = "finish";
 const EMITS_CHANGE = "change";

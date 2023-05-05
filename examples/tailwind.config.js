@@ -20,8 +20,8 @@ module.exports = {
         main: 'calc(100vh - 72px)'
       },
       colors: {
-        main: '#f44c58',
-        'hover-main': '#f32836',
+        main: '#a9dcda',
+        'hover-main': '#a9dcda',
         'success-100': '#F2F9EC',
         'success-200': '#E4F2DB',
         'success-300': '#7EC050',

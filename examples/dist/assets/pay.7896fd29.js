@@ -1,0 +1,1 @@
+import{O as s}from"./index.8e9cc30a.js";const p=()=>s({url:"/user/vip/pay/list"}),i=(r,a,t,e)=>s({url:"/user/alipay",params:{subject:r,totalAmount:a,body:t,isMobile:e}}),l=r=>s({url:"/sys/pay/result",params:{out_trade_no:r}});export{p as a,l as b,i as g};

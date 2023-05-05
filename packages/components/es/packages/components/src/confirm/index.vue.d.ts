@@ -47,9 +47,6 @@ declare namespace _sfc_main {
         ref: any;
         onMounted: any;
         PoiButton: {
-            /**
-             * 取消按钮
-             */
             props: {
                 icon: StringConstructor;
                 iconColor: StringConstructor;
@@ -90,7 +87,9 @@ declare namespace _sfc_main {
                         icon: string;
                     };
                     'icon-default': {
-                        button: string;
+                        button: string; /**
+                         * 控制显示处理
+                         */
                         icon: string;
                     };
                     small: {
@@ -144,9 +143,6 @@ declare namespace _sfc_main {
         ref: any;
         onMounted: any;
         PoiButton: {
-            /**
-             * 取消按钮
-             */
             props: {
                 icon: StringConstructor;
                 iconColor: StringConstructor;
@@ -187,7 +183,9 @@ declare namespace _sfc_main {
                         icon: string;
                     };
                     'icon-default': {
-                        button: string;
+                        button: string; /**
+                         * 控制显示处理
+                         */
                         icon: string;
                     };
                     small: {
