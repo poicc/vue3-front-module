@@ -16,7 +16,10 @@
     "scripts": {
         "build": "vite build",
         "test": "vitest",
-        "test:run": "vitest run"
+        "test:run": "vitest run",
+        "docs:dev": "vitepress dev docs", 
+        "docs:build": "vitepress build docs", 
+        "docs:serve": "vitepress serve docs" 
     },
     "keywords": [],
     "license": "ISC",
@@ -42,6 +45,11 @@
         "sass": "^1.45.0",
         "tailwind-scrollbar": "^2.1.0",
         "vite-plugin-svg-icons": "^2.0.1",
-        "vitest": "^0.21.1"
+        "vitest": "^0.21.1",
+        "vitepress": "1.0.0-alpha.75",
+        "vitepress-theme-demoblock": "^2.0.2",
+        "markdown-it-container": "^3.0.0",
+        "prism-theme-vars": "^0.2.4",
+        "prismjs": "^1.28.0"
     }
 }

@@ -1,22 +1,22 @@
 {
-  "name": "@vangle/docs",
+  "name": "@poicc-components/docs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vitepress dev . --host",
-    "docs:build": "vitepress build .",
-    "docs:serve": "vitepress serve ."
+    "docs:dev": "vitepress dev docs --host",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "poicc-components": "workspace:^1.0.0",
     "fast-glob": "^3.2.11",
+    "poicc-components": "workspace:^1.0.0",
     "sass": "^1.54.5",
-    "vitepress": "0.22.4",
-    "vitepress-theme-demoblock": "^2.0.2"
+    "vitepress-theme-demoblock": "^2.0.2",
+    "vitepress": "1.0.0-alpha.75"
   },
   "dependencies": {
     "markdown-it-container": "^3.0.0",
