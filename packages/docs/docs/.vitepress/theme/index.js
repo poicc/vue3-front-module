@@ -34,6 +34,16 @@ export default {
         app.component('PoiDialog', PoiDialog);
         app.component('PoiCountDown', PoiCountDown);
         app.component('PoiInput', PoiInput);
+        app.component('PoiNavbar', PoiNavbar);
+        app.component('PoiInfinite', PoiInfinite);
+        app.component('PoiPopover', PoiPopover);
+        app.component('PoiPopup', PoiPopup);
+        app.component('PoiSearch', PoiSearch);
+        app.component('PoiTriggerMenu', PoiTriggerMenu);
+        app.component('PoiTriggerMenuItem', PoiTriggerMenuItem);
+        app.component('PoiWaterfull', PoiWaterfull);
+
+        
         app.component('Demo', Demo);
         app.component('DemoBlock', DemoBlock);
     },
