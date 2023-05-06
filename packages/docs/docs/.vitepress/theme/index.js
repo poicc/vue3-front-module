@@ -31,7 +31,7 @@ import PoiPopup  from 'poicc-components/src/popup/index.vue';
 import PoiSearch  from 'poicc-components/src/search/index.vue';
 import PoiTriggerMenu  from 'poicc-components/src/trigger-menu/index.vue';
 import PoiTriggerMenuItem  from 'poicc-components/src/trigger-menu-item/index.vue';
-import PoiWaterfull  from 'poicc-components/src/waterfull/index.vue';
+//import PoiWaterfull  from 'poicc-components/src/waterfull/index.vue';
 // import PoiButton  from '../../../../components/src/button';
 
 import './styles/var.css';
@@ -51,7 +51,7 @@ export default {
         app.component('PoiSearch', PoiSearch);
         app.component('PoiTriggerMenu', PoiTriggerMenu);
         app.component('PoiTriggerMenuItem', PoiTriggerMenuItem);
-        app.component('PoiWaterfull', PoiWaterfull);
+      //  app.component('PoiWaterfull', PoiWaterfull);
 
         
         app.component('Demo', Demo);
