@@ -1,7 +1,7 @@
 "use strict";
 const vue = require("vue");
 require("./utils.js");
-const dayjs_min = require("../_virtual/dayjs.min.js");
+const dayjs_min = require("../node_modules/.pnpm/registry.npmmirror.com_dayjs@1.11.7/node_modules/dayjs/dayjs.min.js");
 const _hoisted_1 = { class: "text-sm" };
 const EMITS_FINISH = "finish";
 const EMITS_CHANGE = "change";

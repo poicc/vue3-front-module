@@ -79,7 +79,7 @@ importers:
       gsap: ^3.9.1
       husky: ^8.0.3
       md5: ^2.3.0
-      poicc-components: workspace:^1.0.0
+      poicc-components: ^1.0.2
       prettier: ^2.8.1
       sass: ^1.45.0
       tailwind-scrollbar: ^2.1.0
@@ -128,7 +128,6 @@ importers:
 
   packages/components:
     specifiers:
-      '@poicc-ui/utils': workspace:^1.0.0
       '@vitejs/plugin-vue': ^3.2.0
       '@vitest/ui': ^0.14.2
       '@vue/test-utils': 2.3.2
@@ -153,7 +152,6 @@ importers:
       vitest: ^0.21.1
       vue-router: ^4.0.14
     dependencies:
-      '@poicc-ui/utils': link:../utils
       '@vueuse/core': registry.npmmirror.com/@vueuse/core/9.13.0
       '@vueuse/shared': registry.npmmirror.com/@vueuse/shared/10.0.2
       autoprefixer: registry.npmmirror.com/autoprefixer/10.4.14_postcss@8.4.21

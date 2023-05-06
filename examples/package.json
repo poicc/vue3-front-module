@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "poicc-components": "workspace:^1.0.0",
+    "poicc-components": "^1.0.2",
     "@commitlint/cli": "17.0.2",
     "@commitlint/config-conventional": "17.0.2",
     "@vue/eslint-config-prettier": "^7.0.0",

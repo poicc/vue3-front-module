@@ -1,6 +1,6 @@
 {
     "name": "poicc-components",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "main": "lib/index.js",
     "module": "es/index.js",
     "description": "基于 vue3 的前台组件库",
@@ -25,7 +25,6 @@
     "license": "ISC",
     "typings": "lib/index.d.ts",
     "dependencies": {
-        "@poicc-ui/utils": "workspace:^1.0.0",
         "@vueuse/core": "^9.6.0",
         "@vueuse/shared": "^10.0.2",
         "autoprefixer": "^10.4.2",

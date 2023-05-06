@@ -1,6 +1,8 @@
 node_modules/*
 examples/node_modules/*
 packages/components/node_modules/*
+packages/components/lib/*
+packages/components/es/*
 packages/utils/node_modules/*
 packages/docs/node_modules/*
 
