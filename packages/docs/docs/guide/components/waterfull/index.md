@@ -41,7 +41,6 @@ export default {
 ```vue
 <template>
   <PoiWaterfull
-    ref="waterfall"
     :data="items"
     :column="2"
     :columnSpacing="20"
@@ -57,7 +56,7 @@ export default {
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 const items = [
   { src: 'https://picsum.photos/400/300' },
@@ -70,9 +69,6 @@ export default {
     return {
       items,
     }
-  },
-  mounted() {
-    this.$refs.waterfall.calculateSize() // 重新计算并更新每列的高度和位置
   },
 }
 </script>
