@@ -45,7 +45,7 @@ export default {
                         { text: '气泡框Popup', link: '/guide/components/popup/' },
                         { text: '搜索栏Search', link: '/guide/components/search/' },
                         { text: '菜单Trigger-menu', link: '/guide/components/trigger-menu/' },
-                        //{ text: '瀑布流Waterfull', link: '/guide/components/waterfull/' },
+                        // { text: '瀑布流Waterfull', link: '/guide/components/waterfull/' },
                     ],
                     collapsible: true,
                 },
