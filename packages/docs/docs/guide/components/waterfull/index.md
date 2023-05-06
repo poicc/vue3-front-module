@@ -35,45 +35,6 @@ export default {
 ```
 :::
 
-## Example
-
-:::demo
-```vue
-<template>
-  <PoiWaterfull
-    :data="items"
-    :column="2"
-    :columnSpacing="20"
-    :rowSpacing="20"
-    :picturePreReading="true"
-  >
-    <template #default="{ item, width }">
-      <div>
-        <img :src="item.src" :style="{ width: width + 'px' }">
-      </div>
-    </template>
-  </PoiWaterfull>
-</template>
-
-<script>
-import { ref } from 'vue'
-
-const items = [
-  { src: 'https://picsum.photos/400/300' },
-  { src: 'https://picsum.photos/500/500' },
-  // ...
-]
-
-export default {
-  data() {
-    return {
-      items,
-    }
-  },
-}
-</script>
-```
-:::
 
 
 ## Props
