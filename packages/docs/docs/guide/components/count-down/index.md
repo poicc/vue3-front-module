@@ -44,21 +44,6 @@
   </div>
 </template>
 
-<script>
-import { ref } from 'vue'
-
-export default {
-  setup() {
-    const count = ref(0)
-
-    const handleFinish = () => {
-      count.value++
-    }
-
-    return { count, handleFinish }
-  }
-}
-</script>
 ```
 :::
 
